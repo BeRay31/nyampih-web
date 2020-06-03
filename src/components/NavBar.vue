@@ -1,6 +1,6 @@
 <template>
     <nav >
-        <v-app-bar app height=80 color="#FFF" style="border-bottom : solid 3px #039C9E">
+        <v-app-bar app height=80 color="#FFF" style="border-bottom : solid 3px #039C9E; opacity : 0.9">
             <router-link tag="div" class="logo mr-12 pa-1" :to="{ name:'Home' }">
                 <v-avatar>
                     <v-img
@@ -11,34 +11,33 @@
                     NYAMPIH
                 </v-text>
             </router-link>
-            <v-btn class="navbar-button mx-2" text :to="{ name:'Home' }" small rounded active-class="active-link" exact>
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'Home' }" small rounded active-class="active-link" exact>
                 <span class="navbar-text">Home</span>
             </v-btn>
         
-            <v-btn class="navbar-button mx-2" text :to="{ name:'About' }" small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'About' }" small rounded active-class="active-link">
                 <span class="navbar-text">Tentang Kami</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" text small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
                 <span class="navbar-text" >Layanan</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" text small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
                 <span class="navbar-text" >FAQ</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" text small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
                 <span class="navbar-text" >Kontak</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
             <v-avatar size="40" style="cursor : pointer">
                 <v-img
                 src="../assets/instagram.png"
                 contain
-                sizes=""
                 ></v-img>
             </v-avatar>
         </v-app-bar>
@@ -55,15 +54,6 @@ export default {
 </script>
 
 <style scoped>
-    /* .shop_menu {
-        background-color: green;
-    } */
-    .cartIcon {
-        margin-left: 15px;
-    }
-    .headerCartDrawer {
-        background-color: #1e1e1e;
-    }
     .use-raleway {
         font-family: 'Raleway', sans-serif;  
     }
@@ -84,7 +74,7 @@ export default {
     }
 
     .active-link {
-        border-bottom: solid 3px #039C9E;
+        border-bottom: solid 5px #039C9E;
     }
 
     .navbar-text {
