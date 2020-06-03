@@ -11,27 +11,27 @@
                     NYAMPIH
                 </v-text>
             </router-link>
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'Home' }" small rounded active-class="active-link" exact>
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'Home' }" rounded active-class="active-link" exact>
                 <span class="navbar-text">Home</span>
             </v-btn>
         
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'About' }" small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'About' }" rounded active-class="active-link">
                 <span class="navbar-text">Tentang Kami</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
                 <span class="navbar-text" >Layanan</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
                 <span class="navbar-text" >FAQ</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
                 <span class="navbar-text" >Kontak</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark small rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
             <v-avatar size="40" style="cursor : pointer">
