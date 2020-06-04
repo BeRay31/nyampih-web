@@ -22,6 +22,11 @@ Vue.use(VueRouter)
     path: '/services',
     name: 'Services',
     component: () => import('../views/Services.vue')
+  },
+  {
+    path: '/faq',
+    name: 'FAQ',
+    component: () => import('../views/Faq.vue')
   }
 ]
 
