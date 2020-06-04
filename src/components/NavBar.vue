@@ -1,6 +1,6 @@
 <template>
     <nav >
-        <v-app-bar app height=80 color="#FFF" style="border-bottom : solid 3px #039C9E; opacity : 0.9">
+        <v-app-bar app height=80 style="border-bottom : solid 3px #039C9E; background-color : rgba(255,255,255,0.9)">
             <router-link tag="div" class="logo mr-12 pa-1" :to="{ name:'Home' }">
                 <v-avatar>
                     <v-img
@@ -11,27 +11,27 @@
                     NYAMPIH
                 </v-text>
             </router-link>
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'Home' }" rounded active-class="active-link" exact>
+            <v-btn class="navbar-button mx-2" text :to="{ name:'Home' }" rounded active-class="active-link" exact>
                 <span class="navbar-text">Home</span>
             </v-btn>
         
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark :to="{ name:'About' }" rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" text :to="{ name:'About' }" rounded active-class="active-link">
                 <span class="navbar-text">Tentang Kami</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" text rounded :to="{ name : 'Services' }" active-class="active-link">
                 <span class="navbar-text" >Layanan</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
                 <span class="navbar-text" >FAQ</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
                 <span class="navbar-text" >Kontak</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button mx-2" depressed color="#039C9E" dark rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
             <v-avatar size="40" style="cursor : pointer">
@@ -74,7 +74,7 @@ export default {
     }
 
     .active-link {
-        border-bottom: solid 5px #039C9E;
+        border-bottom: none 0px #039C9E !important;
     }
 
     .navbar-text {
@@ -84,6 +84,7 @@ export default {
     }   
     .navbar-button {
         margin: 0 0.6em;
+        border-bottom: solid 5px #039C9E;
     }
     
 </style>
