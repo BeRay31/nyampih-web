@@ -4,6 +4,7 @@
     <v-content>
       <router-view></router-view>
     </v-content>
+    <span>{{ mobileView }}</span>
   </v-app>
 </template>
 
@@ -18,7 +19,21 @@ export default {
   },
 
   data: () => ({
-    //
+    mobileView: false
   }),
+  created() {
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize();
+  },
+  destroyed() {
+      window.removeEventListener('resize', this.handleResize);
+  },
+  methods: {
+      handleResize() {
+          // this.window.width = window.innerWidth;
+          // this.window.height = window.innerHeight;
+          this.mobileView = window.innerWidth <= 990;
+      }
+  }
 };
 </script>
