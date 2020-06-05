@@ -21,30 +21,33 @@
       </v-flex>
     </v-layout>
 
-    <v-layout class="full-page home-content-2 top-layer" column align-center>
-      <v-flex class="flex-1">
-        <div style="width : 80vw" class="banner-title text-uppercase text-center font-weight-black">Kenapa Memilih Nyampih?</div>
-      </v-flex>
-      <v-flex class="flex-1">
-        <v-layout class="container-content-2">
-          <v-layout column class="mx-1" align-center v-for="ben in benefit" :key="ben.text">
-            <v-flex>
-              <v-img
-                max-height="200"
-                max-width="200"
-                contain
-                class="mb-5"
-                :src="require(`../assets/${ben.img}`)"
-              ></v-img>
-            </v-flex>
-            <v-flex class="banner-subtitle font-weight-black">
-              {{ ben.text }}
-            </v-flex>
-          </v-layout>
-        </v-layout>
-      </v-flex>
-    </v-layout>
-
+    <div class="full-page home-content-2 top-layer">
+      <v-layout class="full-page home-content-2 top-layer" row>
+        <v-flex md12 xs12 align-self-center class="flex-1 pb-10 title-content-2">
+          <div style="width : 80vw" class="banner-title text-uppercase text-center font-weight-black">Kenapa Memilih Nyampih?</div>
+        </v-flex>
+        <v-flex md3 xs12 align-self-center class="content-2" v-for="ben in benefit" :key="ben.text">
+          <v-container >
+            <v-layout column align-center>
+              <v-flex>
+                <v-img
+                  max-height="25vh"
+                  max-width="25vw"
+                  contain
+                  class="mb-5"
+                  :src="require(`../assets/${ben.img}`)"
+                ></v-img>
+              </v-flex>
+              <v-flex class="banner-subtitle font-weight-black">
+                {{ ben.text }}
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-flex>
+      </v-layout>
+    </div>
+    
+    
     <v-layout class="full-page home-content-3 top-layer " column align-center>
       <v-flex class="flex-1">
         <div style="width : 80vw; color:#fff" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
@@ -78,7 +81,7 @@ export default {
     return {
       benefit : [
         {img : 'date_icon.png', text : 'Jadwal Pengangkutan yang Fleksibel'},
-        {img : 'trash_edu.png', text : 'Edukasi Pemilahan Sampah'},
+        {img : 'trash_edu.png', text : 'Edukasi Tentang Pemilahan Sampah'},
         {img : 'trash_edu.png', text : 'Kemudahan Pemesanan Melalui Aplikasi'},
         {img : 'trash_edu.png', text : 'Pengangkut Terpercaya dan Terverifikasi'}
       ],
@@ -146,5 +149,29 @@ export default {
 }
 .container-content-2 {
   width: 80vw;
+}
+.test {
+  background-color: aqua;
+}
+@media screen and (max-width: 800px) {
+.home-content-2 {
+  height: 100%;
+  padding: 10px;
+}
+.banner-subtitle{
+  font-size: 4vw;
+  width: 80%;
+}
+.banner-title {
+  font-size: 6vw;
+  width: 80%;
+  line-height: 1em;
+}  
+.content-2 {
+  margin-bottom: 5em;
+}
+.title-content-2{
+  margin: 3em;
+}
 }
 </style>
