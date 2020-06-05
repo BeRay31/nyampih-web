@@ -23,7 +23,7 @@
                 <span class="navbar-text" >Layanan</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" text rounded :to="{ name: 'FAQ' }" active-class="active-link">
                 <span class="navbar-text" >FAQ</span>
             </v-btn>
 
@@ -86,5 +86,6 @@ export default {
         margin: 0 0.6em;
         border-bottom: solid 5px #039C9E;
     }
+    
     
 </style>

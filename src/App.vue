@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <NavBar/>
+
+    <NavBarMobile v-if="mobileView"/>
+    <NavBar v-else/>
+
     <v-content>
       <router-view></router-view>
     </v-content>
@@ -10,12 +13,14 @@
 
 <script>
 import NavBar from './components/NavBar';
+import NavBarMobile from './components/NavBarMobile'
 
 export default {
   name: 'App',
 
   components: {
     NavBar,
+    NavBarMobile,
   },
 
   data: () => ({
