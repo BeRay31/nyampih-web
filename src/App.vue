@@ -7,19 +7,20 @@
     <v-content>
       <router-view></router-view>
     </v-content>
-    <span>{{ mobileView }}</span>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import NavBar from './components/NavBar';
+import Footer from './components/Footer'
 import NavBarMobile from './components/NavBarMobile'
 
 export default {
   name: 'App',
 
   components: {
-    NavBar,
+    NavBar, Footer,
     NavBarMobile,
   },
 
