@@ -7,7 +7,7 @@
     <v-content>
       <router-view></router-view>
     </v-content>
-    <Footer />
+    <Footer class="top-layer" />
   </v-app>
 </template>
 
@@ -43,3 +43,9 @@ export default {
   }
 };
 </script>
+<style>
+.top-layer {
+  position: relative;
+  z-index: 2 ;
+}
+</style>
