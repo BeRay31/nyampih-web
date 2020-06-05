@@ -4,7 +4,7 @@
             <v-app-bar-nav-icon class="navbar-button" :class="{'active-link': drawer}" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
             <v-spacer></v-spacer>
-            <router-link tag="div" class="logo mb-1"  :to="{ name:'Home' }">
+            <router-link tag="div" class="logo mb-1 pb-1"  :to="{ name:'Home' }">
                 <v-avatar>
                     <v-img
                     src="../assets/logo.png"
@@ -15,7 +15,7 @@
                 </v-text>
             </router-link>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button join-us" text rounded active-class="active-link">
+            <v-btn class="navbar-button join-us" small text rounded active-class="active-link">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
         </v-app-bar>
@@ -85,7 +85,7 @@
     border-radius: 1em;
     text-align: center;
     letter-spacing: 3px;
-    font-size: 1.1em;
+    font-size: 2vw;
     cursor: pointer;
     margin-right: 3em;
 }
