@@ -2,7 +2,7 @@
     <v-container fluid class='parentContainer'>
         <v-layout row wrap>
             <v-flex xs12 sm12 md6 class="faqTitle" style="font-size: 30px">FAQ</v-flex>
-            <v-flex xs12 sm12 md3>
+            <v-flex xs12 sm12 md6 class="pa-6">
                 <div class="faqTitle">Frequently Asked Question</div>
                 <!-- <v-container>
                     <div class="faqContainer" v-for="faq in faqs" :key="faq.name" @click="alert('hehe')">
@@ -25,8 +25,8 @@
                     </div>
                 </v-container> -->
                 <br v-for="i in 5" :key="i"/>
-                <v-expansion-panels accordion tile dark >
-                    <v-expansion-panel v-for="faq in faqs" :key="faq.name"  style="background:rgba(0, 0, 0, 0.8);color:white">
+                <v-expansion-panels accordion tile dark>
+                    <v-expansion-panel v-for="faq in faqs" :key="faq.name" style="background:rgba(0, 0, 0, 0.8);color:white">
                     <v-expansion-panel-header>
                             <span class="test2">{{ faq.name | uppercase }}</span>
                         </v-expansion-panel-header>
