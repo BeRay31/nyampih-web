@@ -25,13 +25,13 @@
                     </div>
                 </v-container> -->
                 <br v-for="i in 5" :key="i"/>
-                <v-expansion-panels accordion tile dark> 
+                <v-expansion-panels accordion tile dark >
                     <v-expansion-panel v-for="faq in faqs" :key="faq.name"  style="background:rgba(0, 0, 0, 0.8);color:white">
                     <v-expansion-panel-header>
                             <span class="test2">{{ faq.name | uppercase }}</span>
                         </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        <div v-for="each in faq.desc" :key="each.des">
+                        <div v-for="each in faq.desc" :key="each.des" class="content-panel">
                             {{ each.des }}
                         </div>
                     </v-expansion-panel-content>
@@ -93,17 +93,14 @@ export default {
         text-align: center;
         /* background-color: red; */
     }
-    .test {
-        /* opacity: 10%; */
-        /* background: rgba(41, 28, 121, 0.1); */
-        /* color: green; */
-        background-color: red;
+    .flex-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .test2 {
-        /* opacity: 10%; */
-        /* background: rgba(41, 28, 121, 0.1); */
-        /* color: rgba(0,0,0,1); */
-        /* opacity: 10%; */
+@media screen and (max-width: 800px) {
+    .content-panel {
+        width: 70% !important;
     }
-
+}
 </style>
