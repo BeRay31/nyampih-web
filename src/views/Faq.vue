@@ -25,7 +25,7 @@
                     </div>
                 </v-container> -->
                 <br v-for="i in 5" :key="i"/>
-                <v-expansion-panels accordion tile > 
+                <v-expansion-panels accordion tile dark> 
                     <v-expansion-panel v-for="faq in faqs" :key="faq.name"  style="background:rgba(0, 0, 0, 0.8);color:white">
                     <v-expansion-panel-header>
                             <span class="test2">{{ faq.name | uppercase }}</span>
