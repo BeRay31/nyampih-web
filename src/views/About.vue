@@ -6,7 +6,6 @@
     <v-layout class="pr-3 full-page about-content-1 top-layer bg-blur" style="height : 90vh" column align-end>
       <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-uppercase text-right font-weight-black banner-title width-50 white--text ">Tentang Kami</div></v-flex>
       <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-left font-weight-black banner-subtitle width-50 white--text">NYAMPIH berupaya menjadi salah satu penggerak rumah tangga Indonesia untuk mau memilah sampah dalam kehidupan sehari-hari melalui suatu kemudahan akses yang diberikan dalam bentuk aplikasi jasa angkut sampah. Sebagai salah satu pelopor perusahaan di bidang Waste Management melalui aplikasi kami memilki beberapa tujuan utama yaitu mengatasi permasalahan sampah yang terus meningkat di Indonesia, menjadi suatu wadah penggerak motivasi masyarakat untuk mau mengolah sampah dengan baik, dan memberikan akses kemudahan waste management yang modern dan terjangkau.</div></v-flex>
-      
     </v-layout>
 
     <div class="full-page home-content-2 top-layer">
@@ -137,7 +136,7 @@ export default {
   background: url("../assets/showcase_about.png") no-repeat;
   background-size: contain;
   background-size: 100vw 100vh;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 .bg-blur {
   background-color: rgba(3, 0, 0, 0.5);
