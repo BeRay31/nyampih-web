@@ -142,6 +142,7 @@ export default {
 .home-content-2 {
   background: url("../assets/content-2-background.png") repeat;
   background-size: contain;
+  min-height: 100vh;
 }
 .home-content-3 {
   background: url("../assets/content-3-background.png") no-repeat;

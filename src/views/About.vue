@@ -14,7 +14,7 @@
         <v-flex xs12 md12 class="flex-1">
           <div style="width : 80vw" class="banner-title text-uppercase text-center font-weight-black title-about my-10">Meet Our Team</div>
         </v-flex>
-        <v-flex xs12 md3 v-for="member in crew" :key="member.name">
+        <v-flex xs12 md3 v-for="member in crew" :key="member.img">
           <v-layout row class="pos-relative">
             <v-flex md12 class="flex-1">
               <v-avatar size="15vw">
@@ -153,7 +153,7 @@ export default {
 }
 @media screen and (max-width: 800px) {
 .home-content-2 {
-  height: 100vh;
+  height: 100%;
   padding: 10px;
 }
 .banner-subtitle{
