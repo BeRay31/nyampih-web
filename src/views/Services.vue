@@ -1,10 +1,10 @@
 <template>
     <v-container>
-        <div class="descriptionContainer">
-            <v-container>
+        <div>
+            <v-container class="descriptionContainer pa-10" style="width: 60vw;">
                 <span class="layananDesc" style="font-size: 40px; font-weight: 800; letter-spacing: 5px;">LAYANAN</span>
                 <br v-for="n in 3" :key="n">
-                <p class="layananDesc">{{ layananDescription | uppercase}}</p>
+                <p class="layananDesc text-uppercase">{{ layananDescription }}</p>
             </v-container>
         </div>
         <div class="servicesContainer">
@@ -17,7 +17,7 @@
                         <v-img :src="require(`../assets/services/${service.img}`)"></v-img>
                     </v-flex>
                     <v-flex xs6 class="serviceDesc" text-xs-center>
-                        <div class="layananKami" style="font-size: 20px">{{ service.name | uppercase }}</div>
+                        <div class="layananKami text-uppercase" style="font-size: 20px">{{ service.name}}</div>
                         <router-link :to="service.linkReadMore">
                             <div style="color: #414141; text-decoration: underline;" >Read More</div>
                         </router-link>
@@ -42,21 +42,18 @@ export default {
         ],
         layananDescription: 'Service yang kami sediakan berupa jasa angkut sampah dengan kategori sampah; makanan, kertas/kardus, botol plastik. Untuk setiap sampah minimal pengangkutan 5 kilogram. Konsumen dapat mudah memilih kategori sampah di aplikasi kami. Pada layanan aplikasi kami juga terdapat fitur chat untuk memudahkan petugas sampah kami berkomunikasi dengan konsumen, ada pula sistem point/ membership yang nantinya dipergunakan untuk konsumen setia kami lalu point yang didapatkan bisa dikumpulkan hingga ditukarkan dengan produk-produk bertema lingkungan bersama partnership kami.'
     }),
-    filters: {
-        uppercase: function (value) {
-            if (!value) return ''
-            return value.toUpperCase()
-        }
-    }
 }
 </script>
 
 <style scoped>
     .descriptionContainer {
-        background-color: green;
+        background: url("../assets/layanan-background.png") no-repeat;
+        background-size: cover;
     }
-    .servicesContainer {
-        /* background-color: blue; */
+    .flex-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
     .layananDesc {
         font-weight: 600;
