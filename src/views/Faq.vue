@@ -10,7 +10,7 @@
                             <v-icon style="float: right">mdi-chevron-down</v-icon>
                     </div>
                 </v-container> -->
-                <v-container>
+                <!-- <v-container>
                     <div class="faqContainer" v-for="faq in faqs" :key="faq.id" >
                         <div style="cursor: pointer" @click="clickThis(faq.id)">
                             {{ faq.name | uppercase }}
@@ -23,9 +23,10 @@
                             </div>
                         </div>
                     </div>
-                </v-container>
-                <v-expansion-panels accordion tile class="test">
-                    <v-expansion-panel v-for="faq in faqs" :key="faq.name">
+                </v-container> -->
+                <br v-for="i in 5" :key="i"/>
+                <v-expansion-panels accordion tile > 
+                    <v-expansion-panel v-for="faq in faqs" :key="faq.name"  style="background:rgba(0, 0, 0, 0.8);color:white">
                     <v-expansion-panel-header>
                             <span class="test2">{{ faq.name | uppercase }}</span>
                         </v-expansion-panel-header>
@@ -73,7 +74,9 @@ export default {
 
 <style scoped>
     .parentContainer {
-        background-color: green;
+        background: url("../assets/faq-background.png") no-repeat;
+        background-size: cover;
+        height: 100vh;
     }
     .faqContainer {
         padding: 10px 0px;
@@ -102,4 +105,5 @@ export default {
         /* color: rgba(0,0,0,1); */
         /* opacity: 10%; */
     }
+
 </style>
