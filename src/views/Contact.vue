@@ -16,6 +16,7 @@
                         <v-text-field  v-model="Email" :rules="[rules.email]" outlined label="EMAIL" class="dform"></v-text-field>
                         <v-textarea v-model="Isi" :rules="[rules.empty]" outlined name="input-7-4" label="Your message" class="dform"></v-textarea>
                         <v-btn light style="width: 100%; color: white; background-color: black; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()">Submit</v-btn>
+                        <v-text class="success--text subtitle">Your Record HaveBeen Submitted</v-text>
                     </v-flex>
                 </v-layout> 
             </v-flex>
@@ -30,6 +31,7 @@ export default {
         Nama: '',
         Email: '',
         Isi: '',
+        submit : false,
         rules: {
             empty: value => !!value || 'Required!',
             email : value => {
@@ -42,15 +44,29 @@ export default {
             return this.Nama != '' && this.Email.includes('@') && this.Isi != ''
         },
         postIt() {
-            axios.post('https://script.google.com/macros/s/AKfycbxZ3wzZVNSYEUjy-jqetlpPAyRP5_SifJpFaSpq-sprZJTyVa4/exec',
+            axios.post('https://joe-flask-app.herokuapp.com/',
             {
-                Email: this.Email,
-                Nama: this.Nama,
-                Isi: this.Isi
-            })  .then((response) => {console.log(response)})
+                'Email': this.Email,
+                'Nama': this.Nama,
+                'Isi': this.Isi
+            })  .then((response) => {
+                console.log(response.status + ' YEYEYEYEYEY')
+                if(response.status == '200') {
+                    this.Nama = ''
+                    this.Email = ''
+                    this.Isi = ''
+                    this.submit = true
+                    setTimeout(()=>{this.submit = false},5000)
+                }
+                })
                 .catch(error => {console.log(error)})
         }
-    }   
+    },
+    computed : {
+        submitted() {
+            return this.submit
+        }
+    }
 }
 </script>
 
