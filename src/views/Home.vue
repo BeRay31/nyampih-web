@@ -10,7 +10,7 @@
         <v-layout column class="flex-1">
           <v-flex class="banner-subtitle font-weight-black text-uppercase ">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
           <v-flex class="mt-3">
-            <v-btn rounded x-small>
+            <v-btn @click="showMore" rounded x-small>
               <v-icon left>
                 mdi-chevron-down
               </v-icon>
@@ -21,7 +21,7 @@
       </v-flex>
     </v-layout>
 
-    <div class="full-page home-content-2 top-layer">
+    <div class="full-page home-content-2 top-layer" id="content" v-show="show">
       <v-layout class="full-page home-content-2 top-layer" row>
         <v-flex md12 xs12 align-self-center class="flex-1 pb-10 title-content-2">
           <div style="width : 80vw" class="banner-title text-uppercase text-center font-weight-black">Kenapa Memilih Nyampih?</div>
@@ -48,7 +48,7 @@
     </div>
     
     
-    <v-layout class="full-page home-content-3 top-layer " column align-center>
+    <v-layout class="full-page home-content-3 top-layer " column align-center v-show="show">
       <v-flex class="flex-1">
         <div style="width : 80vw; color:#fff" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
       </v-flex>
@@ -79,6 +79,7 @@
 export default {
   data() {
     return {
+      show : false,
       benefit : [
         {img : 'date_icon.png', text : 'Jadwal Pengangkutan yang Fleksibel'},
         {img : 'trash_edu.png', text : 'Edukasi Tentang Pemilahan Sampah'},
@@ -90,6 +91,21 @@ export default {
         {img:'office_icon.png', text : 'Angkut Bisnis' }
       ]
     }
+  },
+  options () {
+    return {
+      duration: 700,
+      offset: 0,
+      easing: 'easeInOutCubic',
+    }
+  },
+  methods :  {
+    showMore() {
+      this.show = true
+      setTimeout(()=>(
+        this.$vuetify.goTo('#content', this.options)
+      ),500)
+    },
   }
 }
 </script>

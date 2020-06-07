@@ -34,12 +34,14 @@
             <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
-            <v-avatar size="40" style="cursor : pointer">
-                <v-img
-                src="../assets/instagram.png"
-                contain
-                ></v-img>
-            </v-avatar>
+            <v-btn small fab flat target="_blank" href="https://www.instagram.com/nyampih.co/?igshid=1s2nvor4bxk8y">
+                <v-avatar size="40" style="cursor : pointer">
+                    <v-img
+                    src="../assets/instagram.png"
+                    contain
+                    ></v-img>
+                </v-avatar>
+            </v-btn>
         </v-app-bar>
     </nav>
 </template>
