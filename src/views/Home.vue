@@ -5,10 +5,10 @@
     </div>
     
     <v-layout class="full-page top-layer" column align-center id="overview">
-      <v-flex class="flex-1"><div class="text-uppercase text-center font-weight-black banner-title" style="font-family: 'Ubuntu'">Menjaga lingkungan kalian tetap bersih</div></v-flex>
+      <v-flex class="flex-1"><div class="text-uppercase text-center font-weight-black banner-title" style="font-family: 'Ubuntu';text-shadow: -3px 3px 3px grey;">Menjaga lingkungan kalian tetap bersih</div></v-flex>
       <v-flex class="flex-1">
         <v-layout column class="flex-1">
-          <v-flex class="banner-subtitle font-weight-black text-uppercase " style="font-family: 'Lato'">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
+          <v-flex class="banner-subtitle font-weight-black text-uppercase " style="font-family: 'Lato';text-shadow: -3px 3px 3px grey;">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
           <v-flex class="mt-3">
             <transition name="fade" mode="out-in">
               <v-btn @click="showMore" rounded x-small v-if="!show">
@@ -60,7 +60,7 @@
     <transition name="fade" mode="out-in">
       <v-layout class="full-page home-content-3 top-layer " column align-center v-show="show">
         <v-flex class="flex-1">
-          <div style="width : 80vw; color:#fff; font-family: 'Ubuntu'" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
+          <div style="width : 80vw; color:#fff; font-family: 'Ubuntu';text-shadow: -2px 2px 2px black" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
         </v-flex>
         <v-flex class="flex-1">
           <v-layout class="container-content-2">
@@ -74,7 +74,7 @@
                   :src="require(`../assets/${service.img}`)"
                 ></v-img>
               </v-flex>
-              <v-flex class="banner-subtitle text-lg text-uppercase text-center white--text font-weight-black" style="font-family: 'Lato'">
+              <v-flex class="banner-subtitle text-lg text-uppercase text-center white--text font-weight-black" style="font-family: 'Lato';text-shadow: -2px 2px 2px black">
                 {{ service.text }}
               </v-flex>
             </v-layout>

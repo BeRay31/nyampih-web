@@ -15,7 +15,7 @@
                 </v-text>
             </router-link>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button join-us" small text rounded active-class="active-link">
+            <v-btn class="navbar-button join-us" small text rounded active-class="active-link" target="_blank" href="https://joe-flask-app.herokuapp.com/download">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
         </v-app-bar>

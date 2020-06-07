@@ -31,7 +31,7 @@
                 <span class="navbar-text" >Kontak</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" target="_blank" href="https://joe-flask-app.herokuapp.com/download" text rounded active-class="active-link">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
             <v-btn small fab flat target="_blank" href="https://www.instagram.com/nyampih.co/?igshid=1s2nvor4bxk8y">
@@ -52,6 +52,15 @@ export default {
     },
     data: () => ({
     }),
+    methods : {
+        forceFileDownload(response){
+            const link = document.createElement('a')
+            link.href = require('../assets/services/Nyampih.apk')
+            link.setAttribute('download', 'Nyampih.apk') //or any other extension
+            document.body.appendChild(link)
+            link.click()
+    },
+    }
 }
 </script>
 
