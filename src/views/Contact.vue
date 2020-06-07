@@ -42,7 +42,7 @@ export default {
             return this.Nama != '' && this.Email.includes('@') && this.Isi != ''
         },
         postIt() {
-            axios.post('https://script.google.com/macros/s/AKfycbxZ3wzZVNSYEUjy-jqetlpPAyRP5_SifJpFaSpq-sprZJTyVa4/exec',
+            axios.post('https://joe-flask-app.herokuapp.com/',
             {
                 Email: this.Email,
                 Nama: this.Nama,
