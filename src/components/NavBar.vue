@@ -27,7 +27,7 @@
                 <span class="navbar-text" >FAQ</span>
             </v-btn>
 
-            <v-btn class="navbar-button mx-2" text rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" text rounded :to="{ name: 'Contact' }" active-class="active-link">
                 <span class="navbar-text" >Kontak</span>
             </v-btn>
             <v-spacer></v-spacer>
