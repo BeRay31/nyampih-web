@@ -12,9 +12,11 @@
             <v-flex xs12 sm4 style="background: rgba(242,241,239,0.5); border-radius: 10px; padding: 30px;">
                 <v-layout align-center>
                     <v-flex>
-                        <v-text-field v-model="Nama" :rules="[rules.empty]" label="Nama Lengkap" outlined class="dform" id="form-1"></v-text-field>
-                        <v-text-field  v-model="Email" :rules="[rules.email]" outlined label="Email" class="dform" id="form-2"></v-text-field>
-                        <v-textarea v-model="Isi" :rules="[rules.empty]" outlined name="input-7-4" label="Pesan" class="dform" id="form-3"></v-textarea>
+                        <v-form ref="form">
+                            <v-text-field v-model="Nama" :rules="[rules.empty]" label="Nama Lengkap" outlined class="dform" id="form-1"></v-text-field>
+                            <v-text-field  v-model="Email" :rules="[rules.email]" outlined label="Email" class="dform" id="form-2"></v-text-field>
+                            <v-textarea v-model="Isi" :rules="[rules.empty]" outlined name="input-7-4" label="Pesan" class="dform" id="form-3"></v-textarea>
+                        </v-form>
                         <v-btn light style="width: 100%; color: white; background-color: black; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()" :loading="processing">Kirim Pesan</v-btn>
                         <v-text v-if="submitted" class="success--text subtitle">Pesan Terkirim</v-text>
                     </v-flex>
@@ -64,13 +66,11 @@ export default {
                         this.submit = true
                         setTimeout(()=>{this.submit = false},5000)
                         this.processing = false
+                        this.$refs.form.reset()
                     }
                     })
                     .catch(error => {console.log(error)})
             }
-            document.getElementById("form-1").reset();
-            document.getElementById("form-2").reset();
-            document.getElementById("form-3").reset();
         }
     },
     computed : {
