@@ -12,10 +12,13 @@
             <v-flex xs12 sm4 style="background: rgba(242,241,239,0.5); border-radius: 10px; padding: 30px;">
                 <v-layout align-center>
                     <v-flex>
-                        <v-text-field v-model="Nama" :rules="[rules.empty]" label="FULL NAME" outlined class="dform"></v-text-field>
-                        <v-text-field  v-model="Email" :rules="[rules.email]" outlined label="EMAIL" class="dform"></v-text-field>
-                        <v-textarea v-model="Isi" :rules="[rules.empty]" outlined name="input-7-4" label="Your message" class="dform"></v-textarea>
-                        <v-btn light style="width: 100%; color: white; background-color: black; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()">Submit</v-btn>
+                        <v-form ref="form">
+                            <v-text-field v-model="Nama" :rules="[rules.empty]" color="#039C9E" label="Nama Lengkap" outlined class="dform" id="form-1"></v-text-field>
+                            <v-text-field  v-model="Email" :rules="[rules.email]" outlined color="#039C9E" label="Email" class="dform" id="form-2"></v-text-field>
+                            <v-textarea v-model="Isi" :rules="[rules.empty]" outlined color="#039C9E" name="input-7-4" label="Pesan" class="dform" id="form-3"></v-textarea>
+                        </v-form>
+                        <v-btn light color="#039C9E" style="width: 100%; color: white; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()" :loading="processing">Kirim Pesan</v-btn>
+                        <v-text v-if="submitted" class="success--text subtitle">Pesan Terkirim</v-text>
                     </v-flex>
                 </v-layout> 
             </v-flex>
@@ -30,27 +33,52 @@ export default {
         Nama: '',
         Email: '',
         Isi: '',
+        snackbar : false,
+        processing : false,
+        submit : false,
         rules: {
-            empty: value => !!value || 'Required!',
-            email : value => {
-                return value.includes('@') || 'Invalid Email'
-            }
+            empty: value => !!value || 'Penting!',
+            email: value => {
+            const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            return pattern.test(value) || 'Email tidak valid'
+          },
         }
     }),
     methods: {
         inputValid()  {
-            return this.Nama != '' && this.Email.includes('@') && this.Isi != ''
+            const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            const testEmail =  pattern.test(this.Email)
+            return this.Nama != '' && testEmail && this.Isi != ''
         },
         postIt() {
-            axios.post('https://joe-flask-app.herokuapp.com/',
-            {
-                Email: this.Email,
-                Nama: this.Nama,
-                Isi: this.Isi
-            })  .then((response) => {console.log(response)})
-                .catch(error => {console.log(error)})
+            if(!this.processing) {
+                this.processing = true
+                axios.post('https://joe-flask-app.herokuapp.com/contact',
+                {
+                    'Email': this.Email,
+                    'Nama': this.Nama,
+                    'Isi': this.Isi
+                })  .then((response) => {
+                    this.Nama = ''
+                    this.Email = ''
+                    this.Isi = ''
+                    console.log(response.status + ' YEYEYEYEYEY')
+                    if(response.status == '200') {
+                        this.submit = true
+                        setTimeout(()=>{this.submit = false},5000)
+                        this.processing = false
+                        this.$refs.form.reset()
+                    }
+                    })
+                    .catch(error => {console.log(error)})
+            }
         }
-    }   
+    },
+    computed : {
+        submitted() {
+            return this.submit
+        }
+    }
 }
 </script>
 

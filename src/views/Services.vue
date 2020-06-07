@@ -20,13 +20,17 @@
                         <div class="layananKami text-uppercase" style="font-size: 20px; font-family: 'Ubuntu'">{{ service.name}}</div>
                         <div class="product-desc flex-1" >{{ service.desc }}</div>
                         <div>
-                            <v-btn dark color="#0f93fe" :to="service.linkBookNow" style="font-family: 'Ubuntu'">Book Now</v-btn>
+                            <v-btn dark color="#039C9E" @click="snackbar = true" target="_blank" href="https://joe-flask-app.herokuapp.com/download" style="font-family: 'Ubuntu'">Book Now</v-btn>
                         </div>
                     </v-flex>
                 </v-layout>
                 <br v-for="n in 2" :key="n">
             </div>
         </div>
+        <v-snackbar v-model="snackbar" top timeout="10000" color="#039C9E">
+            Aplikasi Sudah Di Download !
+            <v-btn color="black" text @click="snackbar = false">Close</v-btn>
+        </v-snackbar>
     </v-container>
 </template>
 
@@ -37,7 +41,8 @@ export default {
             {name: 'Angkut Perumahan', img: 'angkutperumahan.png', desc: 'Angkut Perumahan adalah jasa angkut sampah perumahan dan sampah yang diangkut akan dibawa ke penadah sampah,bank sampah,dll', time: '30 min', linkBookNow: '/hai'},
             {name: 'Angkut Bisnis', img: 'angkutbisnis.png', desc: 'Jasa angkut sampah yang bisa digunakan oleh perkantoran,coffee shop,restauran,kos-kosan,hotel,dll', time: '1 hr', linkBookNow: '/hei'}
         ],
-        layananDescription: 'Service yang kami sediakan berupa jasa angkut sampah dengan kategori sampah; makanan, kertas/kardus, botol plastik. Untuk setiap sampah minimal pengangkutan 5 kilogram. Konsumen dapat mudah memilih kategori sampah di aplikasi kami. Pada layanan aplikasi kami juga terdapat fitur chat untuk memudahkan petugas sampah kami berkomunikasi dengan konsumen, ada pula sistem point/ membership yang nantinya dipergunakan untuk konsumen setia kami lalu point yang didapatkan bisa dikumpulkan hingga ditukarkan dengan produk-produk bertema lingkungan bersama partnership kami.'
+        layananDescription: 'Service yang kami sediakan berupa jasa angkut sampah dengan kategori sampah; makanan, kertas/kardus, botol plastik. Untuk setiap sampah minimal pengangkutan 5 kilogram. Konsumen dapat mudah memilih kategori sampah di aplikasi kami. Pada layanan aplikasi kami juga terdapat fitur chat untuk memudahkan petugas sampah kami berkomunikasi dengan konsumen, ada pula sistem point/ membership yang nantinya dipergunakan untuk konsumen setia kami lalu point yang didapatkan bisa dikumpulkan hingga ditukarkan dengan produk-produk bertema lingkungan bersama partnership kami.',
+        snackbar : false,
     }),
 }
 </script>

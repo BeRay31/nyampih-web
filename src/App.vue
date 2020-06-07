@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <transition name="fadeNav" mode="out-in">
+    <transition name="fadeNav" mode="out-in" appear>
       <NavBarMobile v-if="mobileView"/>
       <NavBar v-else/>
     </transition>
     
     <v-content>
-      <transition name="fade" mode="out-in" >
+      <transition name="fade" mode="out-in" appear>
         <router-view></router-view>
       </transition>
     </v-content>

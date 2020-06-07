@@ -15,7 +15,7 @@
                 </v-text>
             </router-link>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button join-us" small text rounded active-class="active-link">
+            <v-btn class="navbar-button join-us" small text @click="snackbar = true" rounded active-class="active-link" target="_blank" href="https://joe-flask-app.herokuapp.com/download">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
         </v-app-bar>
@@ -56,6 +56,10 @@
 
             </div>
         </v-navigation-drawer>
+        <v-snackbar v-model="snackbar" top timeout="10000" color="#039C9E">
+            Aplikasi Di Download !
+            <v-btn color="black" text @click="snackbar = false">Close</v-btn>
+        </v-snackbar>
     </nav>
 </template>
 
@@ -65,6 +69,7 @@
     data: () => ({
       drawer: false,
       cartDrawer: false,
+      snackbar : false,
       group: null,
       shop_clicked: false,
       loggedIn: false,
@@ -83,7 +88,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-bottom: 4px solid #039C9E;
+    border-bottom: 4px solid rgb(3, 156, 158);
     border-radius: 1em;
     text-align: center;
     letter-spacing: 3px;
