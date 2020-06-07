@@ -33,6 +33,7 @@ export default {
         Nama: '',
         Email: '',
         Isi: '',
+        snackbar : false,
         processing : false,
         submit : false,
         rules: {

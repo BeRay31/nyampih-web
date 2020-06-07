@@ -31,7 +31,7 @@
                 <span class="navbar-text" >Kontak</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn class="navbar-button mx-2" target="_blank" href="https://joe-flask-app.herokuapp.com/download" text rounded active-class="active-link">
+            <v-btn class="navbar-button mx-2" target="_blank" @click="snackbar = true" href="https://joe-flask-app.herokuapp.com/download" text rounded active-class="active-link">
                 <span class="navbar-text" >join Us</span>
             </v-btn>
             <v-btn small fab flat target="_blank" href="https://www.instagram.com/nyampih.co/?igshid=1s2nvor4bxk8y">
@@ -43,6 +43,10 @@
                 </v-avatar>
             </v-btn>
         </v-app-bar>
+        <v-snackbar v-model="snackbar" top timeout="10000" color="green">
+            Aplikasi Sudah Di Download !
+            <v-btn color="black" text @click="snackbar = false">Close</v-btn>
+        </v-snackbar>
     </nav>
 </template>
 
@@ -51,6 +55,7 @@ export default {
     components: {
     },
     data: () => ({
+        snackbar : false,
     }),
     methods : {
         forceFileDownload(response){
