@@ -4,14 +4,14 @@
     </div>
 
     <v-layout class="pr-3 full-page about-content-1 top-layer bg-blur" style="height : 90vh" column align-end>
-      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-uppercase text-right font-weight-black banner-title width-50 white--text ">Tentang Kami</div></v-flex>
-      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-left font-weight-black banner-subtitle width-50 white--text">NYAMPIH berupaya menjadi salah satu penggerak rumah tangga Indonesia untuk mau memilah sampah dalam kehidupan sehari-hari melalui suatu kemudahan akses yang diberikan dalam bentuk aplikasi jasa angkut sampah. Sebagai salah satu pelopor perusahaan di bidang Waste Management melalui aplikasi kami memilki beberapa tujuan utama yaitu mengatasi permasalahan sampah yang terus meningkat di Indonesia, menjadi suatu wadah penggerak motivasi masyarakat untuk mau mengolah sampah dengan baik, dan memberikan akses kemudahan waste management yang modern dan terjangkau.</div></v-flex>
+      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-uppercase text-right font-weight-black banner-title width-50 white--text" style="font-family: 'Ubuntu'">Tentang Kami</div></v-flex>
+      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-left font-weight-black banner-subtitle width-50 white--text" style="font-family: 'Lato';">NYAMPIH berupaya menjadi salah satu penggerak rumah tangga Indonesia untuk mau memilah sampah dalam kehidupan sehari-hari melalui suatu kemudahan akses yang diberikan dalam bentuk aplikasi jasa angkut sampah. Sebagai salah satu pelopor perusahaan di bidang Waste Management melalui aplikasi kami memilki beberapa tujuan utama yaitu mengatasi permasalahan sampah yang terus meningkat di Indonesia, menjadi suatu wadah penggerak motivasi masyarakat untuk mau mengolah sampah dengan baik, dan memberikan akses kemudahan waste management yang modern dan terjangkau.</div></v-flex>
     </v-layout>
 
     <div class="full-page home-content-2 top-layer">
       <v-layout row align-center>
         <v-flex xs12 md12 class="flex-1">
-          <div style="width : 80vw" class="banner-title text-uppercase text-center font-weight-black title-about my-10">Meet Our Team</div>
+          <div style="width : 80vw; font-family: 'Ubuntu';text-shadow: 5px 5px white;" class="banner-title text-uppercase text-center font-weight-black title-about my-10" >Meet Our Team</div>
         </v-flex>
         <v-flex xs12 md3 v-for="member in crew" :key="member.img">
           <v-layout row class="pos-relative">
@@ -24,7 +24,7 @@
               </v-avatar>
             </v-flex>
 
-            <v-flex md12 class="banner-subtitle font-weight-black width-30 mt-10 mb-5 member-name">
+            <v-flex md12 class="banner-subtitle width-30 mt-10 mb-5 member-name" style="font-family: 'Acme'; font-style: italic">
               {{ member.name }}
             </v-flex>
 
@@ -36,11 +36,11 @@
               </v-btn>
             </v-flex>
 
-            <v-flex md12 class="banner-subtitle-details font-weight-black mt-5 width-30 headings role-member">
+            <v-flex md12 class="banner-subtitle-details font-weight-black mt-5 width-30 headings role-member" style="font-family: 'Lato'">
               {{ member.role }}
             </v-flex>
 
-            <v-flex md12 v-if="member.spec" class="banner-subtitle-details font-weight-black width-40 spec-member">
+            <v-flex md12 v-if="member.spec" class="banner-subtitle-details width-40 spec-member" style="font-family: 'Lato'">
               {{ member.spec }}
             </v-flex>
             <v-flex md12 v-else class="banner-subtitle-details text-transparent font-weight-black width-40 spec-member">None</v-flex>

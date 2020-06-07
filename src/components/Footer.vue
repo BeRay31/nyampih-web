@@ -9,19 +9,19 @@
                 <!-- <v-spacer></v-spacer> -->
             </v-flex>
             <v-flex xs6 md2>
-                <div class="fontTebel">Kantor Pusat</div>
+                <div class="fontTebel" style="font-family: 'Ubuntu'">Kantor Pusat</div>
                 <br v-for="n in 2" :key="n">
-                <div style="color: white">
+                <div style="color: white; font-family: 'Lato'">
                     Jl. Ganesa No.15, Lb. Siliwangi, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132
                 </div>
             </v-flex>
             <v-flex xs6 md2>
-                <div class="fontTebel">Jam Operasional</div>
+                <div class="fontTebel" style="font-family: 'Ubuntu'">Jam Operasional</div>
                 <br v-for="n in 2" :key="n">
-                <div style="color: white">
+                <div style="color: white; font-family: 'Lato'">
                     Mon - Fri: 8.00 - 18.00
                 </div>
-                <div style="color: white">
+                <div style="color: white; font-family: 'Lato'">
                     Sat & Sun : 9.00 - 17.00
                 </div>
             </v-flex>

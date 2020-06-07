@@ -7,15 +7,15 @@
             <v-flex xs12 sm12 md12 lg12 text-uppercase text-center class="hubungiTitle">Hubungi kami untuk info lebih lanjut</v-flex>
             <v-flex md12 v-for="n in 3" :key="n"></v-flex>
             <v-flex xs12 sm6 >
-                gmaps here
+                <!-- gmaps here -->
             </v-flex>
-            <v-flex xs12 sm4 style="background-color: white; border-radius: 10px; padding: 30px;">
+            <v-flex xs12 sm4 style="background: rgba(242,241,239,0.5); border-radius: 10px; padding: 30px;">
                 <v-layout align-center>
                     <v-flex>
-                        <v-text-field  label="FULL NAME" outlined></v-text-field>
-                        <v-text-field   outlined label="EMAIL"></v-text-field>
-                        <v-textarea outlined name="input-7-4" label="Your message"></v-textarea>
-                        <v-btn dark style="width: 100%" x-large>Submit</v-btn>
+                        <v-text-field v-model="Nama" :rules="[rules.empty]" label="FULL NAME" outlined class="dform"></v-text-field>
+                        <v-text-field  v-model="Email" :rules="[rules.email]" outlined label="EMAIL" class="dform"></v-text-field>
+                        <v-textarea v-model="Isi" :rules="[rules.empty]" outlined name="input-7-4" label="Your message" class="dform"></v-textarea>
+                        <v-btn light style="width: 100%; color: white; background-color: black; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()">Submit</v-btn>
                     </v-flex>
                 </v-layout> 
             </v-flex>
@@ -27,8 +27,30 @@
 <script>
 export default {
     data: () => ({
-        checkbox: true
-    })
+        Nama: '',
+        Email: '',
+        Isi: '',
+        rules: {
+            empty: value => !!value || 'Required!',
+            email : value => {
+                return value.includes('@') || 'Invalid Email'
+            }
+        }
+    }),
+    methods: {
+        inputValid()  {
+            return this.Nama != '' && this.Email.includes('@') && this.Isi != ''
+        },
+        postIt() {
+            axios.post('https://script.google.com/macros/s/AKfycbxZ3wzZVNSYEUjy-jqetlpPAyRP5_SifJpFaSpq-sprZJTyVa4/exec',
+            {
+                Email: this.Email,
+                Nama: this.Nama,
+                Isi: this.Isi
+            })  .then((response) => {console.log(response)})
+                .catch(error => {console.log(error)})
+        }
+    }   
 }
 </script>
 
@@ -37,9 +59,14 @@ export default {
         margin-top: 30px;
         font-size:calc(12px + 1.5vw);
         font-weight: 800;
-        text-shadow: 0px 0px 2px grey;
+        text-shadow: -3px 3px 3px grey;
+        font-family: 'Ubuntu';
+        letter-spacing: 2px;
     }
     .dparent {
         background: url('../assets/content-2-background.png');
+    }
+    .dform {
+        font-family: 'Lato';
     }
 </style>

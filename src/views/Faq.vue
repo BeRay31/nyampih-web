@@ -4,34 +4,14 @@
             <v-flex xs12 sm12 md6 class="faqTitle" style="font-size: 30px">FAQ</v-flex>
             <v-flex xs12 sm12 md6 class="pa-6">
                 <div class="faqTitle">Frequently Asked Question</div>
-                <!-- <v-container>
-                    <div class="faqContainer" v-for="faq in faqs" :key="faq.name" @click="alert('hehe')">
-                        {{ faq.name | uppercase }}
-                            <v-icon style="float: right">mdi-chevron-down</v-icon>
-                    </div>
-                </v-container> -->
-                <!-- <v-container>
-                    <div class="faqContainer" v-for="faq in faqs" :key="faq.id" >
-                        <div style="cursor: pointer" @click="clickThis(faq.id)">
-                            {{ faq.name | uppercase }}
-                            <v-icon v-if="opening != faq.id" style="float: right">mdi-chevron-down</v-icon>
-                            <v-icon v-if="opening == faq.id" style="float: right">mdi-chevron-up</v-icon>
-                        </div>
-                        <div v-if="opening == faq.id">
-                            <div v-for="each in faq.desc" :key="each.des">
-                                {{ each.des }}
-                            </div>
-                        </div>
-                    </div>
-                </v-container> -->
                 <br v-for="i in 5" :key="i"/>
                 <v-expansion-panels accordion tile dark>
                     <v-expansion-panel v-for="faq in faqs" :key="faq.name" style="background:rgba(0, 0, 0, 0.8);color:white">
                     <v-expansion-panel-header>
-                            <span class="test2">{{ faq.name | uppercase }}</span>
+                            <span style="font-family: 'Lato'; font-weight: 800;">{{ faq.name | uppercase }}</span>
                         </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        <div v-for="each in faq.desc" :key="each.des" class="content-panel">
+                        <div v-for="each in faq.desc" :key="each.des" class="content-panel" style="font-family: 'Ubuntu'">
                             {{ each.des }}
                         </div>
                     </v-expansion-panel-content>
@@ -91,7 +71,7 @@ export default {
         width: 100%;
         color: white;
         text-align: center;
-        /* background-color: red; */
+        font-family: 'Ubuntu'
     }
     .flex-1 {
         display: flex;

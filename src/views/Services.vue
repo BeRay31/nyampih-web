@@ -2,14 +2,14 @@
     <v-container>
         <div>
             <v-container class="descriptionContainer pa-10" style="width: 60vw;">
-                <span class="layananDesc" style="font-size: 40px; font-weight: 800; letter-spacing: 5px;">LAYANAN</span>
+                <span class="layananDesc" style="font-size: 40px; font-weight: 800; letter-spacing: 5px;font-family: 'Ubuntu'">LAYANAN</span>
                 <br v-for="n in 3" :key="n">
                 <p class="layananDesc text-uppercase">{{ layananDescription }}</p>
             </v-container>
         </div>
         <div class="servicesContainer">
             <br>
-            <div class="layananKami" style="color: #414141">LAYANAN KAMI</div>
+            <div class="layananKami" style="color: #414141; font-family: 'Ubuntu'">LAYANAN KAMI</div>
             <br>
             <div v-for="service in services" :key="service.name">
                 <v-layout align-center>
@@ -17,10 +17,10 @@
                         <v-img :src="require(`../assets/services/${service.img}`)"></v-img>
                     </v-flex>
                     <v-flex xs6 class="serviceDesc flex-1" text-xs-center>
-                        <div class="layananKami text-uppercase" style="font-size: 20px">{{ service.name}}</div>
+                        <div class="layananKami text-uppercase" style="font-size: 20px; font-family: 'Ubuntu'">{{ service.name}}</div>
                         <div class="product-desc flex-1" >{{ service.desc }}</div>
                         <div>
-                            <v-btn dark color="#0f93fe" :to="service.linkBookNow">Book Now</v-btn>
+                            <v-btn dark color="#0f93fe" :to="service.linkBookNow" style="font-family: 'Ubuntu'">Book Now</v-btn>
                         </div>
                     </v-flex>
                 </v-layout>
@@ -46,6 +46,8 @@ export default {
     .descriptionContainer {
         background: url("../assets/layanan-background.png") no-repeat;
         background-size: cover;
+        font-family: 'Roboto';
+        /* font-weight: 800; */
     }
     .flex-1 {
     display: flex;
@@ -72,5 +74,6 @@ export default {
     .product-desc{
         text-align: center;
         width: 50%;
+        font-family: 'Lato';
     }
 </style>
