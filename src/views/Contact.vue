@@ -16,7 +16,7 @@
                         <v-text-field  v-model="Email" :rules="[rules.email]" outlined label="EMAIL" class="dform"></v-text-field>
                         <v-textarea v-model="Isi" :rules="[rules.empty]" outlined name="input-7-4" label="Your message" class="dform"></v-textarea>
                         <v-btn light style="width: 100%; color: white; background-color: black; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()">Submit</v-btn>
-                        <v-text class="success--text subtitle">Your Record HaveBeen Submitted</v-text>
+                        <v-text v-if="submitted" class="success--text subtitle">Your Record HaveBeen Submitted</v-text>
                     </v-flex>
                 </v-layout> 
             </v-flex>
