@@ -41,7 +41,7 @@
                     <span class="navbar-text" >FAQ</span>
                 </v-btn>
 
-                <v-btn class="navbar-button drawer-button " text rounded active-class="active-link">
+                <v-btn class="navbar-button drawer-button " text rounded :to="{ name: 'Contact' }" active-class="active-link">
                     <span class="navbar-text" >Kontak</span>
                 </v-btn>
                 <v-avatar size="40" style="cursor : pointer">
