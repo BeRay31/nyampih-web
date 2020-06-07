@@ -20,7 +20,7 @@
                         <div class="layananKami text-uppercase" style="font-size: 20px; font-family: 'Ubuntu'">{{ service.name}}</div>
                         <div class="product-desc flex-1" >{{ service.desc }}</div>
                         <div>
-                            <v-btn dark color="#0f93fe" @click="snackbar = true" target="_blank" href="https://joe-flask-app.herokuapp.com/download" style="font-family: 'Ubuntu'">Book Now</v-btn>
+                            <v-btn dark color="#039C9E" @click="snackbar = true" target="_blank" href="https://joe-flask-app.herokuapp.com/download" style="font-family: 'Ubuntu'">Book Now</v-btn>
                         </div>
                     </v-flex>
                 </v-layout>

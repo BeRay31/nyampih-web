@@ -88,7 +88,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-bottom: 4px solid #039C9E;
+    border-bottom: 4px solid rgb(3, 156, 158);
     border-radius: 1em;
     text-align: center;
     letter-spacing: 3px;

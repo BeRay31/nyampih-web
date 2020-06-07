@@ -82,7 +82,7 @@ export default {
   opacity: 0.6;
 }
 .full-page {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
 }
 .banner-title {

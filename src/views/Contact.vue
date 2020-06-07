@@ -13,11 +13,11 @@
                 <v-layout align-center>
                     <v-flex>
                         <v-form ref="form">
-                            <v-text-field v-model="Nama" :rules="[rules.empty]" label="Nama Lengkap" outlined class="dform" id="form-1"></v-text-field>
-                            <v-text-field  v-model="Email" :rules="[rules.email]" outlined label="Email" class="dform" id="form-2"></v-text-field>
-                            <v-textarea v-model="Isi" :rules="[rules.empty]" outlined name="input-7-4" label="Pesan" class="dform" id="form-3"></v-textarea>
+                            <v-text-field v-model="Nama" :rules="[rules.empty]" color="#039C9E" label="Nama Lengkap" outlined class="dform" id="form-1"></v-text-field>
+                            <v-text-field  v-model="Email" :rules="[rules.email]" outlined color="#039C9E" label="Email" class="dform" id="form-2"></v-text-field>
+                            <v-textarea v-model="Isi" :rules="[rules.empty]" outlined color="#039C9E" name="input-7-4" label="Pesan" class="dform" id="form-3"></v-textarea>
                         </v-form>
-                        <v-btn light style="width: 100%; color: white; background-color: black; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()" :loading="processing">Kirim Pesan</v-btn>
+                        <v-btn light color="#039C9E" style="width: 100%; color: white; font-family: 'Ubuntu';" x-large :disabled="!inputValid()" @click="postIt()" :loading="processing">Kirim Pesan</v-btn>
                         <v-text v-if="submitted" class="success--text subtitle">Pesan Terkirim</v-text>
                     </v-flex>
                 </v-layout> 

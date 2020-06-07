@@ -5,7 +5,7 @@
             <v-flex xs12 sm12 md6 class="pa-6 expansion-panel">
                 <br v-for="i in 3" :key="i"/>
                 <v-expansion-panels accordion tile dark>
-                    <v-expansion-panel v-for="faq in faqs" :key="faq.name" style="background:rgba(0, 0, 0, 0.8);color:white">
+                    <v-expansion-panel v-for="faq in faqs" :key="faq.name" style="background:rgba(3, 156, 158, 0.7); color:white">
                     <v-expansion-panel-header >
                             <span style="font-family: 'Lato'; font-weight: 800;">{{ faq.name | uppercase }}</span>
                         </v-expansion-panel-header>

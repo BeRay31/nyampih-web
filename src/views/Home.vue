@@ -11,17 +11,21 @@
           <v-flex class="banner-subtitle font-weight-black text-uppercase " style="font-family: 'Lato';text-shadow: -3px 3px 3px grey;">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
           <v-flex class="mt-3">
             <transition name="fade" mode="out-in">
-              <v-btn @click="showMore" rounded x-small v-if="!show">
+              <v-btn @click="showMore" class="white--text" rounded small color="#039C9E" v-if="!show">
                 <v-icon left>
                   mdi-chevron-down
                 </v-icon>
-                Show More
+                <span>
+                  Show More
+                </span>
               </v-btn>
-              <v-btn @click="showLess" rounded x-small v-if="show">
+              <v-btn @click="showLess" class="white--text" rounded small color="#039C9E" v-if="show">
                 <v-icon left>
                   mdi-chevron-up
                 </v-icon>
-                Show Less
+                <span>
+                  Show Less
+                </span>
               </v-btn>
             </transition>
           </v-flex>
