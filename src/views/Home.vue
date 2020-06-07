@@ -4,73 +4,85 @@
     <div height="100vh" class="full-page bg-fix">
     </div>
     
-    <v-layout class="full-page top-layer" column align-center>
+    <v-layout class="full-page top-layer" column align-center id="overview">
       <v-flex class="flex-1"><div class="text-uppercase text-center font-weight-black banner-title">Menjaga lingkungan kalian tetap bersih</div></v-flex>
       <v-flex class="flex-1">
         <v-layout column class="flex-1">
           <v-flex class="banner-subtitle font-weight-black text-uppercase ">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
           <v-flex class="mt-3">
-            <v-btn @click="showMore" rounded x-small>
-              <v-icon left>
-                mdi-chevron-down
-              </v-icon>
-              Show More
-            </v-btn>
+            <transition name="fade" mode="out-in">
+              <v-btn @click="showMore" rounded x-small v-if="!show">
+                <v-icon left>
+                  mdi-chevron-down
+                </v-icon>
+                Show More
+              </v-btn>
+              <v-btn @click="showLess" rounded x-small v-if="show">
+                <v-icon left>
+                  mdi-chevron-up
+                </v-icon>
+                Show Less
+              </v-btn>
+            </transition>
           </v-flex>
         </v-layout>
       </v-flex>
     </v-layout>
 
-    <div class="full-page home-content-2 top-layer" id="content" v-show="show">
-      <v-layout class="full-page home-content-2 top-layer" row>
-        <v-flex md12 xs12 align-self-center class="flex-1 pb-10 title-content-2">
-          <div style="width : 80vw" class="banner-title text-uppercase text-center font-weight-black">Kenapa Memilih Nyampih?</div>
+    <transition name="fade" mode="out-in">
+      <div class="full-page home-content-2 top-layer" id="content" v-show="show">
+        <v-layout class="full-page home-content-2 top-layer" row>
+          <v-flex md12 xs12 align-self-center class="flex-1 pb-10 title-content-2">
+            <div style="width : 80vw" class="banner-title text-uppercase text-center font-weight-black">Kenapa Memilih Nyampih?</div>
+          </v-flex>
+          <v-flex md3 xs12 align-self-center class="content-2" v-for="ben in benefit" :key="ben.text">
+            <v-container >
+              <v-layout column align-center>
+                <v-flex>
+                  <v-img
+                    max-height="25vh"
+                    max-width="25vw"
+                    contain
+                    class="mb-5"
+                    :src="require(`../assets/${ben.img}`)"
+                  ></v-img>
+                </v-flex>
+                <v-flex class="banner-subtitle font-weight-black">
+                  {{ ben.text }}
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
+        </v-layout>
+      </div>
+    </transition>
+    
+    <transition name="fade" mode="out-in">
+      <v-layout class="full-page home-content-3 top-layer " column align-center v-show="show">
+        <v-flex class="flex-1">
+          <div style="width : 80vw; color:#fff" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
         </v-flex>
-        <v-flex md3 xs12 align-self-center class="content-2" v-for="ben in benefit" :key="ben.text">
-          <v-container >
-            <v-layout column align-center>
+        <v-flex class="flex-1">
+          <v-layout class="container-content-2">
+            <v-layout column class="mx-1" align-center v-for="service in services" :key="service.text" @click="$router.push('/services')" style="cursor:pointer">
               <v-flex>
                 <v-img
-                  max-height="25vh"
-                  max-width="25vw"
+                  max-height="200"
+                  max-width="200"
                   contain
                   class="mb-5"
-                  :src="require(`../assets/${ben.img}`)"
+                  :src="require(`../assets/${service.img}`)"
                 ></v-img>
               </v-flex>
-              <v-flex class="banner-subtitle font-weight-black">
-                {{ ben.text }}
+              <v-flex class="banner-subtitle text-lg text-uppercase text-center white--text font-weight-black">
+                {{ service.text }}
               </v-flex>
             </v-layout>
-          </v-container>
+          </v-layout>
         </v-flex>
       </v-layout>
-    </div>
-    
-    
-    <v-layout class="full-page home-content-3 top-layer " column align-center v-show="show">
-      <v-flex class="flex-1">
-        <div style="width : 80vw; color:#fff" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
-      </v-flex>
-      <v-flex class="flex-1">
-        <v-layout class="container-content-2">
-          <v-layout column class="mx-1" align-center v-for="service in services" :key="service.text" @click="$router.push('/services')" style="cursor:pointer">
-            <v-flex>
-              <v-img
-                max-height="200"
-                max-width="200"
-                contain
-                class="mb-5"
-                :src="require(`../assets/${service.img}`)"
-              ></v-img>
-            </v-flex>
-            <v-flex class="banner-subtitle text-lg text-uppercase text-center white--text font-weight-black">
-              {{ service.text }}
-            </v-flex>
-          </v-layout>
-        </v-layout>
-      </v-flex>
-    </v-layout>
+    </transition>
+
   </v-container>  
 </template>
 
@@ -105,6 +117,12 @@ export default {
       setTimeout(()=>(
         this.$vuetify.goTo('#content', this.options)
       ),500)
+    },
+    showLess() {
+      setTimeout(()=>(
+        this.show = false
+      ),500)
+        this.$vuetify.goTo('#overview', this.options)
     },
   }
 }
@@ -170,6 +188,19 @@ export default {
 .test {
   background-color: aqua;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.6s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+
 @media screen and (max-width: 800px) {
 .home-content-2 {
   height: 100%;
