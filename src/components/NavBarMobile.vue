@@ -20,7 +20,7 @@
             </v-btn>
         </v-app-bar>
 
-        <v-navigation-drawer v-model="drawer" absolute left temporary width=100vw>
+        <v-navigation-drawer v-model="drawer" style="position : fixed" absolute left temporary width=100vw>
             <v-btn text class="navbar-button mt-2" @click.stop="drawer = !drawer" height=50 width=50 fab>
                 <v-icon>mdi-close</v-icon>    
             </v-btn> <!-- bisa ganti jadi icon x-->

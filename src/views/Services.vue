@@ -16,12 +16,9 @@
                     <v-flex xs6>
                         <v-img :src="require(`../assets/services/${service.img}`)"></v-img>
                     </v-flex>
-                    <v-flex xs6 class="serviceDesc" text-xs-center>
+                    <v-flex xs6 class="serviceDesc flex-1" text-xs-center>
                         <div class="layananKami text-uppercase" style="font-size: 20px">{{ service.name}}</div>
-                        <router-link :to="service.linkReadMore">
-                            <div style="color: #414141; text-decoration: underline;" >Read More</div>
-                        </router-link>
-                        <div style="color: #7faefe">{{ service.time }}</div>
+                        <div class="product-desc flex-1" >{{ service.desc }}</div>
                         <div>
                             <v-btn dark color="#0f93fe" :to="service.linkBookNow">Book Now</v-btn>
                         </div>
@@ -37,8 +34,8 @@
 export default {
     data: () => ({
         services: [
-            {name: 'Angkut Perumahan', img: 'angkutperumahan.png', linkReadMore: '/hehe', time: '30 min', linkBookNow: '/hai'},
-            {name: 'Angkut Bisnis', img: 'angkutbisnis.png', linkReadMore: '/hihi', time: '1 hr', linkBookNow: '/hei'}
+            {name: 'Angkut Perumahan', img: 'angkutperumahan.png', desc: 'Angkut Perumahan adalah jasa angkut sampah perumahan dan sampah yang diangkut akan dibawa ke penadah sampah,bank sampah,dll', time: '30 min', linkBookNow: '/hai'},
+            {name: 'Angkut Bisnis', img: 'angkutbisnis.png', desc: 'Jasa angkut sampah yang bisa digunakan oleh perkantoran,coffee shop,restauran,kos-kosan,hotel,dll', time: '1 hr', linkBookNow: '/hei'}
         ],
         layananDescription: 'Service yang kami sediakan berupa jasa angkut sampah dengan kategori sampah; makanan, kertas/kardus, botol plastik. Untuk setiap sampah minimal pengangkutan 5 kilogram. Konsumen dapat mudah memilih kategori sampah di aplikasi kami. Pada layanan aplikasi kami juga terdapat fitur chat untuk memudahkan petugas sampah kami berkomunikasi dengan konsumen, ada pula sistem point/ membership yang nantinya dipergunakan untuk konsumen setia kami lalu point yang didapatkan bisa dikumpulkan hingga ditukarkan dengan produk-produk bertema lingkungan bersama partnership kami.'
     }),
@@ -52,6 +49,7 @@ export default {
     }
     .flex-1 {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     }
@@ -70,5 +68,9 @@ export default {
         /* background-color: orange; */
         text-align: center;
         margin: 10px;
+    }
+    .product-desc{
+        text-align: center;
+        width: 50%;
     }
 </style>

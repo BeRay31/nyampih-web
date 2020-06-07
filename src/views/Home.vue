@@ -54,7 +54,7 @@
       </v-flex>
       <v-flex class="flex-1">
         <v-layout class="container-content-2">
-          <v-layout column class="mx-1" align-center v-for="service in services" :key="service.text">
+          <v-layout column class="mx-1" align-center v-for="service in services" :key="service.text" @click="$router.push('/services')" style="cursor:pointer">
             <v-flex>
               <v-img
                 max-height="200"
