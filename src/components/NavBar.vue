@@ -43,7 +43,7 @@
                 </v-avatar>
             </v-btn>
         </v-app-bar>
-        <v-snackbar v-model="snackbar" top timeout="10000" color="green">
+        <v-snackbar v-model="snackbar" top timeout="10000" color="#039C9E">
             Aplikasi Sudah Di Download !
             <v-btn color="black" text @click="snackbar = false">Close</v-btn>
         </v-snackbar>

@@ -56,7 +56,7 @@
 
             </div>
         </v-navigation-drawer>
-        <v-snackbar v-model="snackbar" top timeout="10000" color="green">
+        <v-snackbar v-model="snackbar" top timeout="10000" color="#039C9E">
             Aplikasi Di Download !
             <v-btn color="black" text @click="snackbar = false">Close</v-btn>
         </v-snackbar>
