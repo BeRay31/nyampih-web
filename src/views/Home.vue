@@ -99,12 +99,18 @@ export default {
       benefit : [
         {img : 'date_icon.png', text : 'Jadwal Pengangkutan yang Fleksibel'},
         {img : 'trash_edu.png', text : 'Edukasi Tentang Pemilahan Sampah'},
-        {img : 'app-store-brands.png', text : 'Kemudahan Pemesanan Melalui Aplikasi'},
+        {img : 'mobile-alt-solid.png', text : 'Kemudahan Pemesanan Melalui Aplikasi'},
         {img : 'check-circle-regular.png', text : 'Pengangkut Terpercaya dan Terverifikasi'}
       ],
       services : [
         {img:'home_icon.png', text : 'Angkut Perumahan' },
         {img:'office_icon.png', text : 'Angkut Bisnis' }
+      ],
+      linkedin : [
+        {id: 1, src: 'gaada'},
+        {id: 2, src: 'gaada'},
+        {id: 3, src: 'https://www.linkedin.com/in/minariachantika/'},
+        {id: 4, src: 'gaada'}
       ]
     }
   },

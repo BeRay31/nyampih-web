@@ -7,7 +7,21 @@
             <v-flex xs12 sm12 md12 lg12 text-uppercase text-center class="hubungiTitle">Hubungi kami untuk info lebih lanjut</v-flex>
             <v-flex md12 v-for="n in 3" :key="n"></v-flex>
             <v-flex xs12 sm6 >
-                <!-- gmaps here -->
+                <GmapMap
+                :center="{lat:10, lng:10}"
+                :zoom="7"
+                map-type-id="terrain"
+                style="width: 500px; height: 300px"
+                >
+                <GmapMarker
+                    :key="index"
+                    v-for="(m, index) in markers"
+                    :position="m.position"
+                    :clickable="true"
+                    :draggable="true"
+                    @click="center=m.position"
+                />
+                </GmapMap>
             </v-flex>
             <v-flex xs12 sm4 style="background: rgba(242,241,239,0.5); border-radius: 10px; padding: 30px;">
                 <v-layout align-center>
