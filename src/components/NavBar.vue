@@ -57,15 +57,6 @@ export default {
     data: () => ({
         snackbar : false,
     }),
-    methods : {
-        forceFileDownload(response){
-            const link = document.createElement('a')
-            link.href = require('../assets/services/Nyampih.apk')
-            link.setAttribute('download', 'Nyampih.apk') //or any other extension
-            document.body.appendChild(link)
-            link.click()
-    },
-    }
 }
 </script>
 

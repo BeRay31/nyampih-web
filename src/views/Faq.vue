@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class='parentContainer'>
+    <v-container fluid class='parentContainer full-page'>
         <v-layout column="" wrap align-center="">
             <v-flex xs12 sm12 md6 class="faqTitle display-2">FAQ</v-flex>
             <v-flex xs12 sm12 md6 class="pa-6 expansion-panel">
@@ -52,10 +52,14 @@ export default {
 </script>
 
 <style scoped>
+    .full-page {
+        min-height: 100vh;
+        max-height: 110%;
+        min-width: 100vw;
+    }
     .parentContainer {
         background: url("../assets/faq-background.png") no-repeat;
         background-size: cover;
-        height: 100vh;
     }
     .faqContainer {
         padding: 10px 0px;
