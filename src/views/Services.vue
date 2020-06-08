@@ -1,13 +1,11 @@
 <template>
-    <v-container>
-        <div>
-            <v-container class="descriptionContainer pa-10" style="width: 70vw;">
-                <span class="layananDesc banner-title white--text" style=" font-weight: 800; letter-spacing: 5px;font-family: 'Ubuntu'">LAYANAN</span>
-                <br v-for="n in 3" :key="n">
-                <p class="layananDesc text-uppercase banner-subtitle white--text">{{ layananDescription }}</p>
-            </v-container>
+    <v-container fluid>
+         <div class="descriptionContainer pa-10" style="width: 100vw; height: calc(100vh - 80px)">
+            <span class="layananDesc banner-title white--text" style=" font-weight: 800; letter-spacing: 5px;font-family: 'Ubuntu'">LAYANAN</span>
+            <br v-for="n in 3" :key="n">
+            <p class="layananDesc text-uppercase banner-subtitle white--text">{{ layananDescription }}</p>
         </div>
-        <div class="servicesContainer">
+        <v-container>
             <br>
             <div class="layananKami" style="color: #414141; font-family: 'Ubuntu'">LAYANAN KAMI</div>
             <br>
@@ -26,7 +24,7 @@
                 </v-layout>
                 <br v-for="n in 2" :key="n">
             </div>
-        </div>
+        </v-container>
         <v-snackbar v-model="snackbar" top timeout="10000" color="#039C9E">
             Aplikasi Sudah Di Download !
             <v-btn color="black" text @click="snackbar = false">Close</v-btn>
@@ -48,10 +46,17 @@ export default {
 </script>
 
 <style scoped>
+    *{
+        box-sizing: border-box;
+        /* margin: 0; */
+        padding: 0;
+    }
     .descriptionContainer {
         background: url("../assets/layanan-background.png") no-repeat;
         background-size: cover;
         font-family: 'Roboto';
+        /* padding: 0;
+        margin: 0; */
         /* font-weight: 800; */
     }
     .flex-1 {
