@@ -5,7 +5,7 @@
     </div>
     
     <v-layout class="full-page top-layer" column align-center id="overview">
-      <v-flex class="flex-1"><div class="text-uppercase text-center font-weight-black banner-title" style="font-family: 'Ubuntu';text-shadow: -3px 3px 3px grey;">Menjaga lingkungan kalian tetap bersih</div></v-flex>
+      <v-flex class="flex-1"><div class="text-uppercase text-center font-weight-black banner-title" style="font-family: 'Ubuntu';text-shadow: -3px 3px 3px grey;">Menjaga lingkungan anda tetap bersih</div></v-flex>
       <v-flex class="flex-1">
         <v-layout column class="flex-1">
           <v-flex class="banner-subtitle font-weight-black text-uppercase " style="font-family: 'Lato';text-shadow: -3px 3px 3px grey;">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
@@ -46,6 +46,8 @@
                   <v-img
                     max-height="25vh"
                     max-width="25vw"
+                    min-height="10vh"
+                    min-width="10vw"
                     contain
                     class="mb-5"
                     :src="require(`../assets/${ben.img}`)"
@@ -73,6 +75,8 @@
                 <v-img
                   max-height="200"
                   max-width="200"
+                  min-height="100"
+                  min-width="100"
                   contain
                   class="mb-5"
                   :src="require(`../assets/${service.img}`)"
@@ -97,14 +101,14 @@ export default {
     return {
       show : false,
       benefit : [
-        {img : 'date_icon.png', text : 'Jadwal Pengangkutan yang Fleksibel'},
-        {img : 'trash_edu.png', text : 'Edukasi Tentang Pemilahan Sampah'},
-        {img : 'mobile-alt-solid.png', text : 'Kemudahan Pemesanan Melalui Aplikasi'},
-        {img : 'check-circle-regular.png', text : 'Pengangkut Terpercaya dan Terverifikasi'}
+        {img : 'event.png', text : 'Jadwal Pengangkutan yang Fleksibel'},
+        {img : 'faces.png', text : 'Edukasi Tentang Pemilahan Sampah'},
+        {img : 'phone.png', text : 'Kemudahan Pemesanan Melalui Aplikasi'},
+        {img : 'verified.png', text : 'Pengangkut Terpercaya dan Terverifikasi'}
       ],
       services : [
-        {img:'home_icon.png', text : 'Angkut Perumahan' },
-        {img:'office_icon.png', text : 'Angkut Bisnis' }
+        {img:'home.png', text : 'Angkut Perumahan' },
+        {img:'business.png', text : 'Angkut Bisnis' }
       ],
       linkedin : [
         {id: 1, src: 'gaada'},

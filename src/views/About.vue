@@ -29,7 +29,7 @@
             </v-flex>
 
             <v-flex md12 class="flex-1 logo-linkedin">
-              <v-btn fab>
+              <v-btn fab :href="member.link">
                 <v-icon>
                   fab fa-linkedin-in
                 </v-icon>
@@ -58,11 +58,11 @@ export default {
   data() {
     return {
       crew : [
-        {img : 'karin.png', name : 'Karin Winda Lestari', role : 'CEO',spec : ''},
-        {img : 'faza.png', name : 'Faza Sausan Sanny P', role : 'CMO', spec : 'Digital Marketing'},
-        {img : 'minaria.png', name : 'Minaria Chantika', role : 'CMO', spec : 'Marketing Communication'},
-        {img : 'silvi.png', name : 'Silvia Ayuni Putri', role : 'COO',spec : ''}
-      ],
+        {img : 'karin.png', name : 'Karin Winda Lestari', role : 'CEO',spec : '', link: 'http://linkedin.com/in/karin-winda-lestari-6428751a7'},
+        {img : 'faza.png', name : 'Faza Sausan Sanny P', role : 'CMO', spec : 'Digital Marketing', link: 'http://linkedin.com/in/fazassp'},
+        {img : 'minaria.png', name : 'Minaria Chantika', role : 'CMO', spec : 'Marketing Communication', link: 'http://linkedin.com/in/minariachantika'},
+        {img : 'silvi.png', name : 'Silvia Ayuni Putri', role : 'COO',spec : '', link: 'http://linkedin.com/in/silvia-ayuni-putri-92699b196'}
+      ]
     }
   }
 }
