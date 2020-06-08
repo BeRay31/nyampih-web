@@ -1,26 +1,14 @@
 <template>
     <v-container grid-list-xl class="dparent" fluid>
         <v-layout align-center row wrap full-page >
-            <!-- <v-flex>
-
-            </v-flex> -->
             <v-flex xs12 sm12 md12 lg12 text-uppercase text-center class="hubungiTitle">Hubungi kami untuk info lebih lanjut</v-flex>
             <v-flex md12 v-for="n in 3" :key="n"></v-flex>
-            <v-flex xs12 sm6 >
-                <GmapMap
-                :center="{lat:10, lng:10}"
-                :zoom="7"
-                map-type-id="terrain"
-                style="width: 500px; height: 300px"
-                >
-                <GmapMarker
-                    :key="index"
-                    v-for="(m, index) in markers"
-                    :position="m.position"
-                    :clickable="true"
-                    :draggable="true"
-                    @click="center=m.position"
-                />
+            <v-flex xs12 sm6>
+                <GmapMap map-type-id="terrain" :zoom="15" :center="{lat: -6.893817, lng: 107.609243}" style="width: 30vw; min-width:300px; height: 300px; margin: 0 auto;">
+                    <GmapMarker 
+                        :position="{lat: -6.893721, lng: 107.608966}"
+                        :clickable="true"
+                    />
                 </GmapMap>
             </v-flex>
             <v-flex xs12 sm4 style="background: rgba(242,241,239,0.5); border-radius: 10px; padding: 30px;">
@@ -56,7 +44,7 @@ export default {
             const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             return pattern.test(value) || 'Email tidak valid'
           },
-        }
+        },
     }),
     methods: {
         inputValid()  {
@@ -86,13 +74,13 @@ export default {
                     })
                     .catch(error => {console.log(error)})
             }
-        }
+        },
     },
     computed : {
         submitted() {
             return this.submit
         }
-    }
+    },
 }
 </script>
 
