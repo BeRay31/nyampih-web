@@ -1,10 +1,10 @@
 <template>
     <v-container>
         <div>
-            <v-container class="descriptionContainer pa-10" style="width: 60vw;">
-                <span class="layananDesc" style="font-size: 40px; font-weight: 800; letter-spacing: 5px;font-family: 'Ubuntu'">LAYANAN</span>
+            <v-container class="descriptionContainer pa-10" style="width: 70vw;">
+                <span class="layananDesc banner-title white--text" style=" font-weight: 800; letter-spacing: 5px;font-family: 'Ubuntu'">LAYANAN</span>
                 <br v-for="n in 3" :key="n">
-                <p class="layananDesc text-uppercase">{{ layananDescription }}</p>
+                <p class="layananDesc text-uppercase banner-subtitle white--text">{{ layananDescription }}</p>
             </v-container>
         </div>
         <div class="servicesContainer">
@@ -55,10 +55,10 @@ export default {
         /* font-weight: 800; */
     }
     .flex-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .layananDesc {
         font-weight: 600;
@@ -80,5 +80,25 @@ export default {
         text-align: center;
         width: 50%;
         font-family: 'Lato';
+    }
+    .banner-title {
+        font-size: 3.4vw;
+        letter-spacing: 0.7vw;
+        line-height: 3vw;
+    }
+    .banner-subtitle {
+        font-size: 1.7vw;  
+    }
+
+    @media screen and (max-width: 800px) {
+        .banner-subtitle{
+            font-size: 2.5vw;
+            width: 80%;
+        }
+        .banner-title {
+            font-size: 4vw;
+            width: 80%;
+            line-height: 1em;
+        }  
     }
 </style>

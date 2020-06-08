@@ -146,8 +146,9 @@ export default {
   opacity: 0.6;
 }
 .full-page {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  max-height: 110%;
+  min-width: 100vw;
 }
 .banner-title {
   color: black;

@@ -25,19 +25,19 @@
                 <v-icon>mdi-close</v-icon>    
             </v-btn> <!-- bisa ganti jadi icon x-->
             <div class="menu">
-                <v-btn class="navbar-button drawer-button " text :to="{ hash : '#overview',name:'Home' }" rounded active-class="active-link" exact>
+                <v-btn class="navbar-button drawer-button " text :to="{ name:'Home' }" rounded active-class="active-link" exact>
                     <span class="navbar-text">Home</span>
                 </v-btn>
             
-                <v-btn class="navbar-button drawer-button " text :to="{ hash : '#overview', name:'About' }" rounded active-class="active-link">
+                <v-btn class="navbar-button drawer-button " text :to="{ name:'About' }" rounded active-class="active-link">
                     <span class="navbar-text">Tentang Kami</span>
                 </v-btn>
 
-                <v-btn class="navbar-button drawer-button " text rounded :to="{ hash: '#overview', name : 'Services' }" active-class="active-link">
+                <v-btn class="navbar-button drawer-button " text rounded :to="{ name : 'Services' }" active-class="active-link">
                     <span class="navbar-text" >Layanan</span>
                 </v-btn>
 
-                <v-btn class="navbar-button drawer-button " text rounded :to="{ hash:'#faq', name: 'FAQ' }" active-class="active-link">
+                <v-btn class="navbar-button drawer-button " text rounded :to="{ name: 'FAQ' }" active-class="active-link">
                     <span class="navbar-text" >FAQ</span>
                 </v-btn>
 

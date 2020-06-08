@@ -82,14 +82,20 @@ export default {
   opacity: 0.6;
 }
 .full-page {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  max-height: 110%;
+  min-width: 100vw;
 }
 .banner-title {
   color: black;
   font-size: 3.4vw;
   letter-spacing: 0.7vw;
   line-height: 3vw;
+}
+.banner-subtitle {
+  text-align: center;
+  color: black;
+  font-size: 1.7vw;  
 }
 .width-50 {
   width: 55vw;
@@ -111,11 +117,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.banner-subtitle {
-  text-align: center;
-  color: black;
-  font-size: 1.7vw;  
 }
 .banner-subtitle-details {
   text-align: center;
@@ -156,11 +157,11 @@ export default {
   padding: 10px;
 }
 .banner-subtitle{
-  font-size: 2.3vw;
+  font-size: 2.5vw;
   width: 80%;
 }
 .banner-title {
-  font-size: 4vw;
+  font-size: 5vw;
   width: 80%;
   line-height: 1em;
 }  
