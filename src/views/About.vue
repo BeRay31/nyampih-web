@@ -65,7 +65,7 @@
             </v-flex>
 
             <v-flex md12 class="flex-1">
-              <div class="text-container px-3" style="text-align : center;">
+              <div class="text-container" style="text-align : center;">
                 <div class="member-name" style="font-family: 'Acme'; font-style: italic;font-size : 20px">{{ member.name }}</div>
                 <div class="font-weight-black  headings " style="font-family: 'Lato'">{{ member.role }}</div>
                 <div v-if="member.spec" style="font-family: 'Lato'">
@@ -187,7 +187,7 @@ export default {
 }
 .home-content-2 {
   background: url("../assets/content-2-background.png") repeat;
-  background-size: contain;
+  background-size: cover;
   min-height: 100vh;
   height: 100%;
 }
