@@ -42,7 +42,7 @@
                     ></v-img>
                 </v-avatar>
             </v-btn>
-            <v-btn class="mx-2" small fab flat target="_blank" href="Use: https://wa.me/6285383539770">
+            <v-btn class="mx-2" small fab flat target="_blank" href="https://wa.me/6285383539770">
                 <v-img
                 src="../assets/whatsapp-icon.png"
                 width="51px"
