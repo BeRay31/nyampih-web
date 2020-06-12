@@ -5,13 +5,13 @@
     </div>
     
     <v-layout class="full-page top-layer" column align-center id="overview">
-      <v-flex class="flex-1"><div class="text-uppercase text-center font-weight-black banner-title" style="font-family: 'Ubuntu';text-shadow: -3px 3px 3px grey;">Menjaga lingkungan anda tetap bersih</div></v-flex>
+      <v-flex class="flex-1"><div class="text-uppercase text-center font-weight-black banner-title home-showcase-text" style="font-family: 'Poppins'">Menjaga lingkungan anda tetap bersih</div></v-flex>
       <v-flex class="flex-1">
         <v-layout column class="flex-1">
-          <v-flex class="banner-subtitle font-weight-black text-uppercase " style="font-family: 'Lato';text-shadow: -3px 3px 3px grey;">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
+          <v-flex class="banner-subtitle font-weight-black text-stroke" style="font-family: 'Lato';text-shadow: -3px 3px 3px grey;width : 70%;font-size : 2.1vw">Jasa angkut sampah yang fleksibel melayani daerah Bandung dan sekitarnya.</v-flex>
           <v-flex class="mt-3">
             <transition name="fade" mode="out-in">
-              <v-btn @click="showMore" class="white--text" rounded small color="#039C9E" v-if="!show">
+              <v-btn @click="showMore" class="white--text" rounded  color="#039C9E" v-if="!show">
                 <v-icon left>
                   mdi-chevron-down
                 </v-icon>
@@ -19,7 +19,7 @@
                   Show More
                 </span>
               </v-btn>
-              <v-btn @click="showLess" class="white--text" rounded small color="#039C9E" v-if="show">
+              <v-btn @click="showLess" class="white--text" rounded  color="#039C9E" v-if="show">
                 <v-icon left>
                   mdi-chevron-up
                 </v-icon>
@@ -37,7 +37,7 @@
       <div class="full-page home-content-2 top-layer" id="content" v-show="show">
         <v-layout class="full-page home-content-2 top-layer" row>
           <v-flex md12 xs12 align-self-center class="flex-1 pb-10 title-content-2">
-            <div style="width : 80vw; font-family: 'Ubuntu';text-shadow: -3px 8px 8px grey;" class="banner-title text-uppercase text-center font-weight-black" >Kenapa Memilih Nyampih?</div>
+            <div style="width : 80vw; font-family: 'Poppins';text-shadow: -3px 8px 8px grey;" class="banner-title text-uppercase text-center font-weight-black" >Kenapa Memilih Nyampih?</div>
           </v-flex>
           <v-flex md3 xs12 align-self-center class="content-2" v-for="ben in benefit" :key="ben.text">
             <v-container >
@@ -49,11 +49,11 @@
                     min-height="10vh"
                     min-width="10vw"
                     contain
-                    class="mb-5"
+                    class="mb-5 flex-1"
                     :src="require(`../assets/${ben.img}`)"
                   ></v-img>
                 </v-flex>
-                <v-flex class="banner-subtitle font-weight-black" style="font-family: 'Lato'">
+                <v-flex class="banner-subtitle font-weight-black" style="font-family: 'Lato' ;">
                   {{ ben.text }}
                 </v-flex>
               </v-layout>
@@ -66,17 +66,17 @@
     <transition name="fade" mode="out-in">
       <v-layout class="full-page home-content-3 top-layer " column align-center v-show="show">
         <v-flex class="flex-1">
-          <div style="width : 80vw; color:#fff; font-family: 'Ubuntu';text-shadow: -2px 2px 2px black" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
+          <div style="width : 80vw; color:#fff; font-family: 'Poppins';text-shadow: -2px 2px 2px black" class="banner-title text-uppercase text-center font-weight-black">Layanan Kami</div>
         </v-flex>
         <v-flex class="flex-1">
           <v-layout class="container-content-2">
             <v-layout column class="mx-1" align-center v-for="service in services" :key="service.text" @click="$router.push('/services')" style="cursor:pointer">
               <v-flex>
                 <v-img
-                  max-height="200"
-                  max-width="200"
-                  min-height="100"
-                  min-width="100"
+                  max-height="25vh"
+                  max-width="25vw"
+                  min-height="10vh"
+                  min-width="10vw"
                   contain
                   class="mb-5"
                   :src="require(`../assets/${service.img}`)"
@@ -167,9 +167,15 @@ export default {
   line-height: 3vw;
   width: 50%;
 }
+.home-showcase-text {
+  width : 60%;
+}
 .top-layer {
   position: relative;
   z-index: 2 ;
+}
+.text-stroke {
+  letter-spacing: 2px;
 }
 .flex-1 {
   display: flex;

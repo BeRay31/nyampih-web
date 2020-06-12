@@ -1,13 +1,13 @@
 <template>
     <v-container fluid>
          <div class="descriptionContainer pa-10" style="width: 100vw; height: calc(100vh - 80px)">
-            <span class="layananDesc banner-title white--text" style=" font-weight: 800; letter-spacing: 5px;font-family: 'Ubuntu'">LAYANAN</span>
+            <span class="layananDesc banner-title white--text" style=" font-weight: 800; letter-spacing: 5px;font-family: 'Poppins'">LAYANAN</span>
             <br v-for="n in 3" :key="n">
-            <p class="layananDesc text-uppercase banner-subtitle white--text">{{ layananDescription }}</p>
+            <p class="layananDesc  banner-subtitle white--text" style="font-family: 'Lato'">{{ layananDescription }}</p>
         </div>
         <v-container>
             <br>
-            <div class="layananKami" style="color: #414141; font-family: 'Ubuntu'">LAYANAN KAMI</div>
+            <div class="layananKami" style="color: #414141; font-family: 'Poppins'">LAYANAN KAMI</div>
             <br>
             <div v-for="service in services" :key="service.name">
                 <v-layout align-center>

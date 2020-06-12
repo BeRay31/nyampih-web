@@ -3,20 +3,21 @@
     <div height="100vh" class="full-page bg-fix">
     </div>
 
-    <v-layout class="pr-3 full-page about-content-1 top-layer bg-blur" style="height : 90vh" column align-end>
-      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-uppercase text-right font-weight-black banner-title width-50 white--text" style="font-family: 'Ubuntu'">Tentang Kami</div></v-flex>
-      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-left font-weight-black banner-subtitle width-50 white--text" style="font-family: 'Lato';">NYAMPIH berupaya menjadi salah satu penggerak rumah tangga Indonesia untuk mau memilah sampah dalam kehidupan sehari-hari melalui suatu kemudahan akses yang diberikan dalam bentuk aplikasi jasa angkut sampah. Sebagai salah satu pelopor perusahaan di bidang Waste Management melalui aplikasi kami memilki beberapa tujuan utama yaitu mengatasi permasalahan sampah yang terus meningkat di Indonesia, menjadi suatu wadah penggerak motivasi masyarakat untuk mau mengolah sampah dengan baik, dan memberikan akses kemudahan waste management yang modern dan terjangkau.</div></v-flex>
+    <v-layout class=" full-page about-content-1 top-layer bg-blur" style="height : 90vh" column align-end>
+      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-uppercase text-right font-weight-black banner-title width-50 white--text" style="font-family: 'Poppins';padding : 0 1.5rem">Tentang Kami</div></v-flex>
+      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-left font-weight-black banner-subtitle width-50 white--text" style="font-family: 'Lato'; letter-spacing : 2px;padding : 0 1.5rem"><span style="display:inline-block; width: 3rem;"></span>NYAMPIH berupaya menjadi salah satu penggerak rumah tangga Indonesia untuk mau memilah sampah dalam kehidupan sehari-hari melalui suatu kemudahan akses yang diberikan dalam bentuk aplikasi jasa angkut sampah. Sebagai salah satu pelopor perusahaan di bidang Waste Management melalui aplikasi kami memilki beberapa tujuan utama yaitu mengatasi permasalahan sampah yang terus meningkat di Indonesia, menjadi suatu wadah penggerak motivasi masyarakat untuk mau mengolah sampah dengan baik, dan memberikan akses kemudahan waste management yang modern dan terjangkau.</div></v-flex>
     </v-layout>
 
-    <div class="full-page home-content-2 top-layer">
-      <v-layout row align-center>
+    <div class="full-page home-content-2 top-layer flex-1">
+      
+      <v-layout v-if="!mobileView" row align-center style="padding : 1.75rem">
         <v-flex xs12 md12 class="flex-1">
-          <div style="width : 80vw; font-family: 'Ubuntu';text-shadow: 5px 5px white;" class="banner-title text-uppercase text-center font-weight-black title-about my-10" >Meet Our Team</div>
+          <div style="width : 80vw; font-family: 'Poppins';text-shadow: 5px 5px white;" class="banner-title text-uppercase text-center font-weight-black title-about my-10" >Meet Our Team</div>
         </v-flex>
         <v-flex xs12 md3 v-for="member in crew" :key="member.img">
           <v-layout row class="pos-relative">
             <v-flex md12 class="flex-1">
-              <v-avatar size="15vw">
+              <v-avatar size="17.5vw">
                 <v-img
                 class="mb-5"
                 :src="require(`../assets/${member.img}`)"
@@ -29,7 +30,7 @@
             </v-flex>
 
             <v-flex md12 class="flex-1 logo-linkedin">
-              <v-btn fab :href="member.link">
+              <v-btn fab :href="member.link" style="">
                 <v-icon>
                   fab fa-linkedin-in
                 </v-icon>
@@ -47,8 +48,47 @@
           </v-layout>
         </v-flex>
       </v-layout>
-    </div>
 
+      <v-layout v-if="mobileView" column align-center style="padding : 1.75rem">
+        <v-flex class="flex-1">
+          <div style="width : 80vw; font-family: 'Poppins';text-shadow: 5px 5px white;" class="banner-title text-uppercase text-center font-weight-black title-about my-10" >Meet Our Team</div>
+        </v-flex>
+        <v-flex v-for="member in crew" :key="member.img">
+          <v-layout row class="pos-relative" style="margin-top : 2rem; width : 90vw;padding : 1rem">
+            <v-flex sm class="flex-1">
+              <v-avatar size="17.5vw">
+                <v-img
+                class="mb-5"
+                :src="require(`../assets/${member.img}`)"
+                ></v-img>
+              </v-avatar>
+            </v-flex>
+
+            <v-flex md12 class="flex-1">
+              <div class="text-container px-5" style="text-align : center;">
+                <div class="member-name" style="font-family: 'Acme'; font-style: italic;font-size : 20px">{{ member.name }}</div>
+                <div class="font-weight-black  headings " style="font-family: 'Lato'">{{ member.role }}</div>
+                <div v-if="member.spec" style="font-family: 'Lato'">
+                  {{ member.spec }}
+                </div>
+                <div v-else class="text-transparent">None</div>
+              </div>
+            </v-flex>
+
+            <v-flex md12 class="flex-1 logo-linkedin">
+              <v-btn fab :href="member.link" style="">
+                <v-icon>
+                  fab fa-linkedin-in
+                </v-icon>
+              </v-btn>
+            </v-flex>
+
+          </v-layout>
+        </v-flex>
+      </v-layout>
+
+
+    </div>
   </v-container>  
 </template>
 
@@ -62,10 +102,26 @@ export default {
         {img : 'faza.png', name : 'Faza Sausan Sanny P', role : 'CMO', spec : 'Digital Marketing', link: 'http://linkedin.com/in/fazassp'},
         {img : 'minaria.png', name : 'Minaria Chantika', role : 'CMO', spec : 'Marketing Communication', link: 'http://linkedin.com/in/minariachantika'},
         {img : 'silvi.png', name : 'Silvia Ayuni Putri', role : 'COO',spec : '', link: 'http://linkedin.com/in/silvia-ayuni-putri-92699b196'}
-      ]
+      ],
+      mobileView : false,
     }
+  },
+  created() {
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize();
+  },
+  destroyed() {
+      window.removeEventListener('resize', this.handleResize);
+  },
+  methods: {
+      handleResize() {
+          // this.window.width = window.innerWidth;
+          // this.window.height = window.innerHeight;
+          this.mobileView = window.innerWidth <= 700;
+      }
   }
 }
+
 </script>
 
 <style scoped>
@@ -132,6 +188,8 @@ export default {
 .home-content-2 {
   background: url("../assets/content-2-background.png") repeat;
   background-size: contain;
+  min-height: 100vh;
+  height: 100%;
 }
 .about-content-1 {
   background: url("../assets/showcase_about.png") no-repeat;
@@ -191,26 +249,6 @@ export default {
 }
 .text-transparent {
   color: transparent;
-}
-.logo-linkedin{
-  position: absolute;
-  bottom: 10%;
-  right: 4%;
-}
-.role-member{
-  position: absolute;
-  left: 43%;
-  top: 40%;
-}
-.spec-member{
-  position: absolute;
-  left: 38%;
-  top: 80%;
-
-}
-.member-name{
-  margin: 0;
-  padding: 0;
 }
 }
 </style>

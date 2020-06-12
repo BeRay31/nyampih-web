@@ -44,14 +44,23 @@
                 <v-btn class="navbar-button drawer-button " text rounded :to="{ name: 'Contact' }" active-class="active-link">
                     <span class="navbar-text" >Kontak</span>
                 </v-btn>
-                <v-btn small fab flat target="_blank" href="https://www.instagram.com/nyampih.co/?igshid=1s2nvor4bxk8y">
-                    <v-avatar size="40" style="cursor : pointer">
+                <v-container class="flex-1">
+                    <v-btn class="mx-2" small fab flat target="_blank" href="https://www.instagram.com/nyampih.co/?igshid=1s2nvor4bxk8y">
+                        <v-avatar size="40" style="cursor : pointer">
+                            <v-img
+                            src="../assets/instagram.png"
+                            contain
+                            ></v-img>
+                        </v-avatar>
+                    </v-btn>
+                    <v-btn class="mx-2" small fab flat target="_blank" href="Use: https://wa.me/6285383539770">
                         <v-img
-                        src="../assets/instagram.png"
-                        contain
+                        src="../assets/whatsapp-icon.png"
+                        width="51px"
+                        height="51px"
                         ></v-img>
-                    </v-avatar>
-                </v-btn>
+                    </v-btn>
+                </v-container>
                 <v-spacer></v-spacer>
 
             </div>
@@ -118,5 +127,10 @@
     display: grid;
     align-items: center;
     justify-items: center;
+}
+.flex-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
