@@ -34,7 +34,7 @@
     </v-layout>
 
     <transition name="fade" mode="out-in">
-      <div class="full-page home-content-2 top-layer" id="content" v-show="show">
+      <div class="full-page home-content-2 top-layer py-10" id="content" v-show="show">
         <v-layout class="full-page home-content-2 top-layer" row>
           <v-flex md12 xs12 align-self-center class="flex-1 pb-10 title-content-2">
             <div style="width : 80vw; font-family: 'Poppins';text-shadow: -3px 8px 8px grey;" class="banner-title text-uppercase text-center font-weight-black" >Kenapa Memilih Nyampih?</div>
@@ -196,7 +196,7 @@ export default {
 }
 .home-content-2 {
   background: url("../assets/content-2-background.png") repeat;
-  background-size: contain;
+  background-size: cover;
   min-height: 100vh;
 }
 .home-content-3 {
