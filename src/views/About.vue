@@ -76,7 +76,7 @@
             </v-flex>
 
             <v-flex md12 class="flex-1 logo-linkedin">
-              <v-btn fab :href="member.link" style="">
+              <v-btn fab :href="member.link" target="_blank">
                 <v-icon>
                   fab fa-linkedin-in
                 </v-icon>
