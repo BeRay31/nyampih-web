@@ -238,7 +238,7 @@ export default {
   text-align: center !important;
 }
 .text-content-1{
-  text-align: center !important;
+  text-align: left !important;
 }
 .banner-subtitle-details {
   text-align: center;
