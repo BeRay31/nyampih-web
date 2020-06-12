@@ -193,8 +193,7 @@ export default {
 }
 .about-content-1 {
   background: url("../assets/showcase_about.png") no-repeat;
-  background-size: contain;
-  background-size: 100vw 100vh;
+  background-size: cover;
   opacity: 0.95;
 }
 .bg-blur {
