@@ -5,7 +5,7 @@
 
     <v-layout class=" full-page about-content-1 top-layer bg-blur" style="height : 90vh" column align-end>
       <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-uppercase text-right font-weight-black banner-title width-50 white--text" style="font-family: 'Poppins';padding : 0 1.5rem">Tentang Kami</div></v-flex>
-      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-left font-weight-black banner-subtitle width-50 white--text" style="font-family: 'Lato'; letter-spacing : 2px;padding : 0 1.5rem"><span style="display:inline-block; width: 3rem;"></span>NYAMPIH berupaya menjadi salah satu penggerak rumah tangga Indonesia untuk mau memilah sampah dalam kehidupan sehari-hari melalui suatu kemudahan akses yang diberikan dalam bentuk aplikasi jasa angkut sampah. Sebagai salah satu pelopor perusahaan di bidang Waste Management melalui aplikasi kami memilki beberapa tujuan utama yaitu mengatasi permasalahan sampah yang terus meningkat di Indonesia, menjadi suatu wadah penggerak motivasi masyarakat untuk mau mengolah sampah dengan baik, dan memberikan akses kemudahan waste management yang modern dan terjangkau.</div></v-flex>
+      <v-flex class="flex-1 bg-blur pa-5 content-1"><div class="text-content-1 text-left font-weight-black banner-subtitle width-50 white--text" style="font-family: 'Lato'; letter-spacing : 2px;padding : 0 1.5rem"><span v-if="!mobileView" style="display:inline-block; width: 3rem;"></span>NYAMPIH berupaya menjadi salah satu penggerak rumah tangga Indonesia untuk mau memilah sampah dalam kehidupan sehari-hari melalui suatu kemudahan akses yang diberikan dalam bentuk aplikasi jasa angkut sampah. Sebagai salah satu pelopor perusahaan di bidang Waste Management melalui aplikasi kami memilki beberapa tujuan utama yaitu mengatasi permasalahan sampah yang terus meningkat di Indonesia, menjadi suatu wadah penggerak motivasi masyarakat untuk mau mengolah sampah dengan baik, dan memberikan akses kemudahan waste management yang modern dan terjangkau.</div></v-flex>
     </v-layout>
 
     <div class="full-page home-content-2 top-layer flex-1">
@@ -65,7 +65,7 @@
             </v-flex>
 
             <v-flex md12 class="flex-1">
-              <div class="text-container px-5" style="text-align : center;">
+              <div class="text-container px-3" style="text-align : center;">
                 <div class="member-name" style="font-family: 'Acme'; font-style: italic;font-size : 20px">{{ member.name }}</div>
                 <div class="font-weight-black  headings " style="font-family: 'Lato'">{{ member.role }}</div>
                 <div v-if="member.spec" style="font-family: 'Lato'">
@@ -117,7 +117,7 @@ export default {
       handleResize() {
           // this.window.width = window.innerWidth;
           // this.window.height = window.innerHeight;
-          this.mobileView = window.innerWidth <= 700;
+          this.mobileView = window.innerWidth <= 990;
       }
   }
 }
@@ -209,7 +209,7 @@ export default {
 .text-transparent{
   color: transparent;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 990px) {
 .home-content-2 {
   height: 100%;
   padding: 10px;
